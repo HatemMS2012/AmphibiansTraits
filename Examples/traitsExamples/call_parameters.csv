@@ -1,0 +1,4 @@
+Id;Fundamental_frequency;Dominant_frequency;Pulserate;Call_duration;Note_duration;Call_guild;Min_frequency;Max_frequency;Dominant_frequency_modulation;
+1;3;4;5;1;45;A;23;1;1;44
+2;3;4;5;1;45;C;23;1;1;44
+3;3;43;42;1;2;B;23;112;1;44
