@@ -1,0 +1,50 @@
+#xf-logo {
+    background-image: url(images/Mfnb_logo_wiki.png);
+	height: 100px;
+	width: 250px;
+	background-size: 150px 80px;
+}
+
+.login-prompt-wrapper {
+	width: 80%;
+	border: 5px solid #b3b7cb;
+	margin: 3em auto;
+	padding: 30px;
+	border-radius: 30px;
+	background-image: url(images/Mfnb_logo_wiki.png);
+	background-size: 150px 80px;
+	background-repeat: no-repeat;
+	background-position: bottom right;
+
+	
+}
+
+.login-prompt-wrapper h1 {
+border-bottom: none;
+color: black;
+background-color: #81BEF7;
+margin-left: -35px;
+margin-right: -35px;
+font-size: 14pt;
+padding: 1em;
+}
+#Login-Username label, #Login-Password label {
+float: left;
+display: block;
+font-size: 16pt;
+text-align: right;
+width: 30%;
+line-height: 30pt;
+color: black;
+}
+/* 
+#left_column {
+  display: none;
+}
+#left_column,
+#top-search-form,
+#top-section,
+#dataface-sections-left-column {
+  display: none;
+}
+*/

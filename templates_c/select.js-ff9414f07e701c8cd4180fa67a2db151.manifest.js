@@ -1,0 +1,1 @@
+{"included":{"xataface\/findwidgets\/select.js":"C:\\xampp\\htdocs\\MyApps\\xataface\\modules\\g2\\js\\xataface\/findwidgets\/select.js"},"dependencies":[],"dependencyContents":{"xataface\/findwidgets\/select.js":"C:\\xampp\\htdocs\\MyApps\\xataface\\modules\\g2\\js\\xataface\/findwidgets\/select.js"},"cssIncludes":[]}
