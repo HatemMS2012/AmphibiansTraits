@@ -8,4 +8,4 @@ In general, biologist store trait data in spreadsheets (e.g. Excel) in non-stand
 
 ##The Data Model
 After analyzing the sample dataset, we came up with a relation data model for amphibians' traits data. At the heart of the model is the "taxonomic_identity entity", which describes a given taxon. Each "taxonomic_identity" is described by set of measurements such as body size, head characteristics and so on (see the figure below). 
-![Relational Model](/Model/AmphibiansERD.svg)
+![Relational Model](/Model/AmphibiansERD.png)
