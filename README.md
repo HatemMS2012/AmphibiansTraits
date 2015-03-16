@@ -24,4 +24,21 @@ The frontend provides the follwoing functionalities:
 + Data export as CSV and XML
 
 
+##Installation Instructions
+
+Initially, you need to have the follwing installed:
++ MySQL database
++ Apache Server
++ PHP
+
+###Database Dump Import
+A dump of the database structure is provided in the project under [/DBDump](/DBDump). A simple way to import the dump is to use  MySQL workbench.
+
+###Installing Xataface Framework
++ Option I: Follow the download and installation instruction of Xataface as described on their [website](http://xataface.com/documentation/tutorial/getting_started/installation)
++ Option II: Unpack the zip file provided with this project [xataface.zip](xataface.zip) to some directory somewhere in your web server's document root.
+
+
+
+
 
