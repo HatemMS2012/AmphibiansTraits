@@ -8,4 +8,20 @@ In general, biologist store trait data in spreadsheets (e.g. Excel) in non-stand
 
 ##The Data Model
 After analyzing the sample dataset, we came up with a relation data model for amphibians' traits data. At the heart of the model is the "taxonomic_identity entity", which describes a given taxon. Each "taxonomic_identity" is described by set of measurements such as body size, head characteristics and so on (see the figure below). 
+
 ![Relational Model](/Model/AmphibiansERD.png)
+
+The data model was implemented using MySQL.
+
+##The Frontend
+In order to effieciently manage trait data, we build a frontend based on Xataface framework. Xataface is an open source framework for developing data-driven web applications in PHP and MySQL.
+
+The frontend provides the follwoing functionalities:
+
+*SCURD: search, create, read, update and delete actinos
+*User registeration and rights management
+*Data import from CSV files
+*Data export as CSV and XML
+
+
+
