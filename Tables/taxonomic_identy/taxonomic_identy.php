@@ -2,12 +2,64 @@
 header('Content-Type: text/html; charset=utf-8');
 mysql_set_charset ('utf-8');
 
+
 class tables_taxonomic_identy {
 
+protected $isImport = 0 ;
+/*
+function field__myid($record){
+   
+   return $record->strval('Genus').'_'.$record->strval('Species');
+}
+*/
+/*
+function description__id(&$record){
+	$Species = $record->strval('Species');
+	$Genus = $record->strval('Genus');
+	$id = $record->val('myid');
+    if (empty($id)) return $Species . '_' . $Genus;
+}
 
-		
+
+
+
 	
-function __import__csv(&$data, $defaultValues=array()){
+	
+	
+
+*/		
+
+	function after_action_new($params=array()){
+		$record =& $params['record'];
+		header('Location: '.$record->getURL('-action=view').'&--msg='.urlencode('Record successfully inserted.'));
+		exit;
+	}
+
+	
+	function beforeInsert(&$record){
+	
+		if( $this->isImport ==0) {
+			$Species = $record->strval('Species');
+			$Genus = $record->strval('Genus');
+			$record->setValue('id',$Species . '_' . $Genus);
+		}
+	}
+	
+	function id__default(){
+		return 'will be automatically generated';
+	}
+	
+	
+	function id__permissions($record){
+		//$perms = Dataface_PermissionsTool::NO_ACCESS();
+		//$perms['edit'] = 1;
+		$perms['new'] = 0;
+		return $perms;
+
+	}
+	function __import__csv(&$data, $defaultValues=array()){
+	
+	$this->isImport = 1;
     // build an array of Dataface_Record objects that are to be inserted based
     // on the CSV file data.
     $records = array();
@@ -77,8 +129,8 @@ function __import__csv(&$data, $defaultValues=array()){
 			) = explode(';', $row);
      
 		
-	 	
-	 
+	 	if(empty($Id))
+			$Id = utf8_encode(trim($Genus)) .'_'. utf8_encode(trim($Species));
 		
 		$record = new Dataface_Record('taxonomic_identy', array());
          // We insert the default values for the record.
