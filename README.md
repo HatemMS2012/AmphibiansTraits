@@ -1,6 +1,6 @@
 # Frontend for Amphibians Traits
 
-The goal of this project is to provide an easy to use frontend for a database of amphibians’ traits information. For this purpose, we created a relational database model for amphibian’s trait data and built a frontend upon it using the [Xataface framework](http://www.xataface.com). The frontend provides the standard SCRUD (Search, Create, Read, Update and Delete) operations as well as user permission and registration functionalities.
+The goal of this project is to provide an easy to use frontend for a database of amphibians’ traits information. For this purpose, we created a relational database model for amphibian’s trait data and built a frontend upon it using the [xataface framework](http://www.xataface.com). The frontend provides the standard SCRUD (Search, Create, Read, Update and Delete) operations as well as user permission and registration functionalities.
 
 ##Motivation
 
