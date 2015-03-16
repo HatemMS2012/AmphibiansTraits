@@ -14,7 +14,7 @@ A full [specification](/Model/Trait_data_base_amphibians_v2.xlsx) of the spreads
 The data model was implemented using MySQL.
 
 ##The Frontend
-In order to efficiently manage trait data, we build a frontend based on Xataface framework. [xataface](http://www.xataface.com). is an open source framework for developing data-driven web applications in PHP and MySQL.
+In order to efficiently manage trait data, we build a frontend based on xataface framework. [xataface](http://www.xataface.com) is an open source framework for developing data-driven web applications in PHP and MySQL.
 
 The frontend provides the following functionalities:
 
