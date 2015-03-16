@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 mysql_set_charset ('utf-8');
 
 
-class tables_taxonomic_identy {
+class tables_taxonomic_identity {
 
 protected $isImport = 0 ;
 /*
