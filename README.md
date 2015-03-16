@@ -18,10 +18,10 @@ In order to effieciently manage trait data, we build a frontend based on Xatafac
 
 The frontend provides the follwoing functionalities:
 
-+SCURD: search, create, read, update and delete actinos
-+User registeration and rights management
-+Data import from CSV files
-+Data export as CSV and XML
++ SCURD: search, create, read, update and delete actinos
++ User registeration and rights management
++ Data import from CSV files
++ Data export as CSV and XML
 
 
 
