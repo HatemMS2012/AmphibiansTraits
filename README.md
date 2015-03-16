@@ -36,7 +36,18 @@ A dump of the database structure is provided in the project under [/DBDump](/DBD
 
 ###Installing Xataface Framework
 + Option I: Follow the download and installation instruction of Xataface as described on their [website](http://xataface.com/documentation/tutorial/getting_started/installation)
-+ Option II: Unpack the zip file provided with this project [xataface.zip](xataface.zip) to some directory somewhere in your web server's document root.
++ Option II: Unpack the zip file provided with this project [xataface.zip](xataface.zip) to a directory somewhere in your web server's document root (e.g. /root/MyApps/xataface).
+
+
+###Installing the Frontend
++ Obtain a copy of this repository and unpack it into the same directory as your xataface installation (e.g. /root/MyApps/amphibians).
++ Got to http://[yourserver]/MyApps/amphibians/
++ For full functionality: Log in as adminstrator: username: "admin" and password: "admin" 
++ For a read only access use: username "guest" and password "guest"
++ Or register as new user and select your permission (for test purposes the registeration is not yet managed properly)
++ Enjoy!!
+
+
 
 
 
