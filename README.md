@@ -7,7 +7,7 @@ The goal of this project is to provide an easy to use frontend for a database of
 In general, biologists store trait data in spreadsheets (e.g. Excel) in non-standardized way. This causes a serious challenge for data sharing, management, and collaboration with other scientists. For this purpose, we analyzed the structure of sample dataset on amphibians’ traits provided by biologists at MFN-Berlin and developed a relation data model. Subsequently, we built a frontend for efficient management and retrieval of the data using [xataface framework](http://www.xataface.com).
 
 ##The Data Model
-After analyzing the sample dataset, we came up with a relation data model for amphibians' traits data. At the heart of the model is the "taxonomic_identity entity", which describes a given taxon. Each "taxonomic_identity" is described by set of measurements such as body size, head characteristics and so on (see the figure below). 
+A full [specification](/Model/Trait_data_base_amphibians_v2.xlsx) of the spreadsheet used at MFN-Berlin for storing amphibians' trait data was obtained. After analyzing the specification, we develped a relation data model for amphibians' traits data. At the heart of the model is the "taxonomic_identity entity", which describes a given taxon. Each "taxonomic_identity" is described by set of measurements such as body size, head characteristics and so on (see the figure below). 
 
 ![Relational Model](/Model/AmphibiansERD.png)
 
