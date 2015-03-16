@@ -33,7 +33,7 @@ function __import__csv(&$data, $defaultValues=array()){
             array(
                 'id'=>trim($Id),
                 'macro'=> trim($macro),
-				'micro'=>trim($micro),
+				'micro'=>trim($micro)
 				)
             );	
 		$habitat_preference->save();

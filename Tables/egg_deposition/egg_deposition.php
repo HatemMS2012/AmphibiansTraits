@@ -22,20 +22,27 @@ function __import__csv(&$data, $defaultValues=array()){
 		}
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
-        list($Id, $Location,$Details) = explode(';', $row);
+        list($Id, $clutchsize_eggs_min,$clutchsize_eggs_max,$clutchsize_eggs_class,$clutchsize_method,$egg_diameter_without_jelly,
+			$egg_diameter_with_jelly,$location,$details,$clutch_structure) = explode(';', $row);
         
-		$egg_deposition = new Dataface_Record('egg_deposition', array());
+		$egg_deposition	= new Dataface_Record('egg_deposition', array());
          // We insert the default values for the record.
         $egg_deposition->setValues($defaultValues);  
 		
-		// Now we add the values from the CSV file to the taxonomic_identy table
-        $egg_deposition->setValues(
-            array(
-                'id'=>$Id,
-                'location'=> trim($Location),
-				'details'=>trim($Details)
-                 )
-            );	
+		$egg_deposition->setValues(
+				array(
+					'id'=>trim($Id),
+					'clutchsize_eggs_min'=>trim($clutchsize_eggs_min),
+					'clutchsize_eggs_max'=>trim($clutchsize_eggs_max),
+					'clutchsize_eggs_class'=>trim($clutchsize_eggs_class),
+					'clutchsize_method'=>trim($clutchsize_method),
+					'egg_diameter_without_jelly'=>trim($egg_diameter_without_jelly),
+					'egg_diameter_with_jelly'=>trim($egg_diameter_with_jelly),
+					'location'=>trim($location),
+					'details'=>trim($details),
+					'clutch_structure'=>trim($clutch_structure)
+					)
+			);
 		$egg_deposition->save();
 		
 		

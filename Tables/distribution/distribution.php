@@ -23,25 +23,22 @@ function __import__csv(&$data, $defaultValues=array()){
 		}
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
-        list($Id, $continent,$range_size_1, $range_size_2, $range, $elevation_min,$elevation_max) = explode(';', $row);
+        list($Id, $Continent,$Range_size1,$Range_size2,$Range,$elevation_min,$elevation_max) = explode(';', $row);
         
 		$distribution = new Dataface_Record('distribution', array());
          // We insert the default values for the record.
         $distribution->setValues($defaultValues);  
-		
-		// Now we add the values from the CSV file to the taxonomic_identy table
-        $distribution->setValues(
+		 $distribution->setValues(
             array(
-                'id'=>$Id,
-                'Continent'=> trim($continent),
-				'Range_size1'=>trim($range_size_1),
-				'Range_size2'=>trim($range_size_2),
-			    'Range'=>trim($range),
-				'elevation_min'=>trim($elevation_min),
-				'elevation_max'=>trim($elevation_max)
-				
-                 )
-            );	
+					'id'=>trim($Id),
+					'Continent'=>trim($Continent),
+					'Range_size1'=>trim($Range_size1),
+					'Range_size2'=>trim($Range_size2),
+					'Range'=>trim($Range),
+					'elevation_min'=>trim($elevation_min),
+					'elevation_max'=>trim($elevation_max)
+					)
+            );
 		$distribution->save();
 		
 		

@@ -1,0 +1,12 @@
+id;call_perch_hight;to_water;chorusing;cover;rapids_or_waterfalls
+A20;litter;at_water;no;no;no
+A21;litter;at_water;no;no;no
+A22;;;;;
+A23;;;;;
+A24;litter;at_water;;;no
+A25;semi_arboral;at_water;;;no
+A26;litter;"no water";;no;no
+A27;litter;at_water;;;no
+A28;litter;"no water";;;no
+A29;semi_arboral;at_water;;no;yes
+A30;litter;;yes;;no

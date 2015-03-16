@@ -22,24 +22,22 @@ function __import__csv(&$data, $defaultValues=array()){
 		}
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
-        list($id, $vocal_sac_manifestation, $vocal_sac_form, $vocal_sac_distensibility, $tympanum_covering, $tympanum_eye_ration) = explode(';', $row);
+        list($Id, $vocal_sac_manifestation,$vocal_sac_form,$vocal_sac_distensibility,$tympanum_covering,$tympanum_eye_ration) = explode(';', $row);
         
-		$vocal_sac_tympanum = new Dataface_Record('vocal_sac_tympanum', array());
+		$vocal_sac_tympanum	= new Dataface_Record('vocal_sac_tympanum', array());
          // We insert the default values for the record.
         $vocal_sac_tympanum->setValues($defaultValues);  
 		
-		// Now we add the values from the CSV file to the taxonomic_identy table
-        $vocal_sac_tympanum->setValues(
-            array(
-                'id'=>$id,
-                'vocal_sac_manifestation'=> trim($vocal_sac_manifestation),
-				'vocal_sac_form'=>trim($vocal_sac_form),
-				'vocal_sac_distensibility'=>trim($vocal_sac_distensibility),
-				'tympanum_covering'=>trim($tympanum_covering),
-				'tympanum_eye_ration'=>trim($tympanum_eye_ration)
-				
-                 )
-            );	
+		$vocal_sac_tympanum->setValues(
+				array(
+					'id'=>trim($Id),
+					'vocal_sac_manifestation'=>trim($vocal_sac_manifestation),
+					'vocal_sac_form'=>trim($vocal_sac_form),
+					'vocal_sac_distensibility'=>trim($vocal_sac_distensibility),
+					'tympanum_covering'=>trim($tympanum_covering),
+					'tympanum_eye_ration'=>trim($tympanum_eye_ration)
+					)
+			);
 		$vocal_sac_tympanum->save();
 		
 		

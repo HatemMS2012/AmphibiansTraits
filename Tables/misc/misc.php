@@ -22,29 +22,29 @@ function __import__csv(&$data, $defaultValues=array()){
 		}
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
-        list($Id, $daily_activity, $developement, $larval_habitat, $tadpoles_guild, $maternal_care, $maternal_care_details, $abundance, $stratigraphic_range, $f_environment_type, $holotype) = explode(';', $row);
+        list($Id, $daily_activity,$reproductive_mode,$tadpole_habitat, $tadpole_feeding, $maternal_care, $maternal_care_details,
+		$abundance,$stratigraphic_range, $f_environment_type,$diet,$climate,$holotype) = explode(';', $row);
         
-		$misc = new Dataface_Record('misc', array());
+		$misc	= new Dataface_Record('misc');
          // We insert the default values for the record.
         $misc->setValues($defaultValues);  
-		
-		// Now we add the values from the CSV file to the taxonomic_identy table
-        $misc->setValues(
-            array(
-                'id'=>$Id,
-                'daily_activity'=> trim($daily_activity),
-				'developement'=>trim($developement),
-				'larval_habitat'=>trim($larval_habitat),
-				'tadpoles_guild'=>trim($tadpoles_guild),
-				'maternal_care'=>trim($maternal_care),
-				'maternal_care_details'=>trim($maternal_care_details),
-				'abundance'=>trim($abundance),
-				'stratigraphic_range'=>trim($stratigraphic_range),
-				'f_environment_type'=>trim($f_environment_type),
-				'holotype'=>trim($holotype)
-				
-                 )
-            );	
+		$misc->setValues(
+				array(
+					'id'=>trim($Id),
+					'daily_activity'=>trim($daily_activity),
+					'reproductive_mode'=>trim($reproductive_mode),
+					'tadpole_habitat'=>trim($tadpole_habitat),
+					'tadpole_feeding'=>trim($tadpole_feeding),
+					'maternal_care'=>trim($maternal_care),
+					'maternal_care_details'=>trim($maternal_care_details),
+					'abundance'=>trim($abundance),
+					'stratigraphic_range'=> trim($stratigraphic_range),
+					'f_environment_type'=>trim($f_environment_type),
+					'diet'=>trim($diet),
+					'climate'=>trim($climate),
+					'holotype'=>trim($holotype)
+					)
+			);
 		$misc->save();
 		
 		

@@ -1,0 +1,12 @@
+id;Continent;Range_size1;Range_size2;Range;elevation_min;elevation_max
+A20;Africa;146696;;fragmented;270;1078
+A21;America;4478920;;continous;100;1300
+A22;Europe;;;;;
+A23;"North America";1;1;continuos;;
+A24;"North America";;;;;
+A25;"South east Asia";;;;;
+A26;"South America";;;;;
+A27;"South America";;;;;
+A28;Madagascar;;;;;
+A29;"South east Asia";;;;;
+A30;Africa;;;;;

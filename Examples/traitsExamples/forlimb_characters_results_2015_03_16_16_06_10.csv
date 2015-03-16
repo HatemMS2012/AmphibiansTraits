@@ -1,0 +1,12 @@
+id;forelimb_length;humerus_length_min;humerus_length_max;hand_length;first_finger_length;second_finger_length;third_finger_length;forth_finger_length;finger_disk;dermal_fringe_along_finger;lateral_dermal_fringe_on_finger;webbing_on_finger;inner_palmar_tubercle;outer_plmar_tubercle;supernumerary_tubercle_on_finger
+A20;4.2;3.1;3.3;2.2;1.1;1.2;1.2;1.3;round;no;yes;no;no;no;yes
+A21;4.2;3.1;3.3;2.2;1.1;1.2;1.2;1.3;round;no;yes;no;no;no;yes
+A22;;;;;;;;;;;;;;;
+A23;;4;4;;;;;;;;;;;;
+A24;;;;;;;;;;;;;;;
+A25;;;;;;;;;;;;;;;
+A26;;;;;;;;;;;;;;;
+A27;;;;;;;;;;;;;;;
+A28;;;;;;;;;;;;;;;
+A29;;;;;;;;;;;;;;;
+A30;;;;;;;;;;;;;;;

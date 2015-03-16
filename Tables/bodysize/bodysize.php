@@ -22,31 +22,31 @@ function __import__csv(&$data, $defaultValues=array()){
 		}
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
-        list($Id, $svlmalemin, $svlmalemax, $svlmalemean, $svlfemalemin, $svlfemalemax, $svlfemalemean, $sexdimorphism) = explode(';', $row);
+        list($Id, $svl_male_min,$svl_male_max,$svl_male_mean,$svl_female_min,$svl_female_max,$svl_female_mean,$sexual_dimorphism) = explode(';', $row);
         
-		$bodySizeRecord = new Dataface_Record('bodysize', array());
+		
+		$bodysize = new Dataface_Record('bodysize', array());
          // We insert the default values for the record.
-        $bodySizeRecord->setValues($defaultValues);  
-		
-		// Now we add the values from the CSV file to the taxonomic_identy table
-         $bodySizeRecord->setValues(
+        $bodysize->setValues($defaultValues);  
+		$bodysize->setValues(
             array(
-                'id'=>$Id,
-                'svl_male_min'=>$svlmalemin,
-                'svl_male_max'=> $svlmalemax,
-				'svl_male_mean'=>$svlmalemean,
-				'svl_female_min'=>$svlfemalemin,
-				'svl_female_max'=>$svlfemalemax,
-				'svl_female_mean'=>$svlfemalemean,
-				'sexual_dimorphism'=>$sexdimorphism
-                 )
-            );	
-		$bodySizeRecord->save();
+					'id'=>trim($Id),
+					'svl_male_min'=>trim($svl_male_min),
+					'svl_male_max'=>trim($svl_male_max),
+					'svl_male_mean'=>trim($svl_male_mean),
+					'svl_female_min'=>trim($svl_female_min),
+					'svl_female_max'=>trim($svl_female_max),
+					'svl_female_mean'=>trim($svl_female_mean),
+					'sexual_dimorphism'=>trim($sexual_dimorphism)    
+					)
+			);
+		$bodysize->save();
+		
+
+	
 		
 		
-		
-		
-        $records[] = $bodySizeRecord ; 
+        $records[] = $bodysize ; 
     }
     
     // Now we return the array of records to be imported.

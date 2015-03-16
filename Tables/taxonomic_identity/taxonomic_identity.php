@@ -81,47 +81,63 @@ function description__id(&$record){
 	
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
-        list($Id,$Order,$Family,$Genus,$Species,$Tax_authority,$Continent,$Range_size1,$Range_size2,$Range,$elevation_min,$elevation_max,
+        list($Id,$Order,$Family,$Genus,$Species,$Tax_authority,
+		
+			//distribution
+			$Continent,$Range_size1,$Range_size2,$Range,$elevation_min,$elevation_max,
 			
+			//bodysize
 			$svl_male_min,$svl_male_max,$svl_male_mean,$svl_female_min,$svl_female_max,$svl_female_mean,$sexual_dimorphism,
 			
+			//head_characters
 			$head_length,$head_width,$snout_length,$internarial_distance,$nostril_to_snout_distance,$eye_to_nostril,$maximum_tympanum_diameter,
 			$eye_length,$distance_between_front_of_eyes,$distance_between_behind_of_eyes,$interorbital_distance,$snout_shape_lateral,
 			$snout_shape_dorsal,$interorbital_shape,$loreal_region_shape,$canthus_rostralis,$nostril_shape,$tympanum_shape,
 			
-			
+			//forlimb_characters
 			$forelimb_length,$humerus_length_min,$humerus_length_max,$hand_length,$first_finger_length,$second_finger_length,$third_finger_length,
 			$forth_finger_length,$finger_disk,$dermal_fringe_along_finger,$lateral_dermal_fringe_on_finger,$webbing_on_finger,$inner_palmar_tubercle,
 			$outer_plmar_tubercle,$supernumerary_tubercle_on_finger,
 			
-			
+			//hindlimb_characters
 			$femur_length_min,$femur_length_max,$tibia_shank_length,$foot_length,$total_foot_length,$first_toe_length,$second_toe_length,
 			$third_toe_length,$fourth_toe_length,$fifth_toe_length,$webbing_on_toe,$dermal_fringe_along_toe,$lateral_dermal_fringe_on_toe,
 			$supernumerary_tubercle_on_toes,$inner_metatarsal_tubercle,$outer_metatarsal_tubercle,
 			
+			//vocal_sac_tympanum
 			$vocal_sac_manifestation,$vocal_sac_form,$vocal_sac_distensibility,$tympanum_covering,$tympanum_eye_ration,
 
+			//habitat_preference
 			$macro, $micro,
 			
+			//misc
 			$daily_activity,
 			
+			//egg_deposition
 			$clutchsize_eggs_min,$clutchsize_eggs_max,$clutchsize_eggs_class,$clutchsize_method,$egg_diameter_without_jelly,
 			$egg_diameter_with_jelly,$location,$details,$clutch_structure,
 			
 			
-			
+			//misc
 			$reproductive_mode,$tadpole_habitat,$tadpole_feeding,$maternal_care,$maternal_care_details,$abundance,$stratigraphic_range,$f_environment_type,$diet,
 			
+			
+			//iucn_threat_status
 			$threat_category,$population_decline,
 			
+			//colouration
 			$pattern,$colour,$warty,$uni_vs_polymorph,
 			
+			//misc
 			$climate,
 			
+			//call_parameters
 			$fundamental_frequency,$dominant_frequency,$pulserate,$call_duration,$note_duration,$call_guild,$min_frequency,$max_frequency,$dominant_frequency_modulation,
 			
+			//calling_behaviour
 			$call_perch_hight,$to_water,$chorusing,$cover,$rapids_or_waterfalls,
 			
+			//misc
 			$holotype
 			
 			
@@ -132,7 +148,7 @@ function description__id(&$record){
 	 	if(empty($Id))
 			$Id = utf8_encode(trim($Genus)) .'_'. utf8_encode(trim($Species));
 		
-		$record = new Dataface_Record('taxonomic_identy', array());
+		$record = new Dataface_Record('taxonomic_identity', array());
          // We insert the default values for the record.
         $record->setValues($defaultValues);  
 		
@@ -295,8 +311,8 @@ function description__id(&$record){
 		$habitat_preference->setValues(
 				array(
 					'id'=>trim($Id),
-					'macro'=>$macro,
-					'micro'=>$micro,
+					'macro'=> trim($macro),
+					'micro'=> trim($micro)
 					)
 			);
 		$habitat_preference->save();
@@ -420,7 +436,7 @@ function description__id(&$record){
 		
 		
 		// Now add the record to the output array.
-        $records[] = $record ; //array_merge($record,$bodySizeRecord,$coloration);
+        $records[] = $record ; 
 		
 		
     }
