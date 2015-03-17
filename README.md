@@ -22,7 +22,7 @@ The frontend provides the following functionalities:
 + User registration and rights management
 + Data import from CSV files
 + Data export as CSV, EXCEL and XML
-+ Report generation tool using the [ckeditor](http://ckeditor.com/)
++ Report generation tool using [ckeditor](http://ckeditor.com/)
 
 
 ##Installation Instructions
