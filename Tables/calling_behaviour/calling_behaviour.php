@@ -2,7 +2,9 @@
 class tables_calling_behaviour {
 
 function __import__csv(&$data, $defaultValues=array()){
-    // build an array of Dataface_Record objects that are to be inserted based
+   
+	$SEP = ',';
+	// build an array of Dataface_Record objects that are to be inserted based
     // on the CSV file data.
     $records = array();
     
@@ -12,7 +14,10 @@ function __import__csv(&$data, $defaultValues=array()){
 	$i=0;
 	
     foreach ( $rows as $row ){
-		
+		//skip empty rows
+		if (strpos($row ,$SEP) ===  false) {
+			continue;
+		}
 		if($i == 0) {
 				
 			echo $row;
@@ -23,7 +28,7 @@ function __import__csv(&$data, $defaultValues=array()){
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
         list($Id, $Call_perch_high,$Calling_behaviourcol, $To_water, $Chorusing, $Cover,
-		$Rapids_or_waterfalls ) = explode(';', $row);
+		$Rapids_or_waterfalls ) = str_getcsv($row, $SEP,'"') ; // explode(';', $row);
         
 		$call_parameters = new Dataface_Record('calling_behaviour', array());
          // We insert the default values for the record.

@@ -2,7 +2,10 @@
 class tables_call_parameters {
 
 function __import__csv(&$data, $defaultValues=array()){
-    // build an array of Dataface_Record objects that are to be inserted based
+   
+	$SEP = ',';
+
+   // build an array of Dataface_Record objects that are to be inserted based
     // on the CSV file data.
     $records = array();
     
@@ -12,7 +15,10 @@ function __import__csv(&$data, $defaultValues=array()){
 	$i=0;
 	
     foreach ( $rows as $row ){
-		
+		//skip empty rows
+		if (strpos($row ,$SEP) ===  false) {
+			continue;
+		}
 		if($i == 0) {
 				
 			echo $row;
@@ -23,7 +29,7 @@ function __import__csv(&$data, $defaultValues=array()){
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
         list($Id, $Fundamental_frequency,$Dominant_frequency, $Pulserate, $Call_duration, $Note_duration,
-		$Call_guild,$Min_frequency,$Max_frequency,$Dominant_frequency_modulation ) = explode(';', $row);
+		$Call_guild,$Min_frequency,$Max_frequency,$Dominant_frequency_modulation ) = str_getcsv($row, $SEP,'"') ; //explode(';', $row);
         
 		$call_parameters = new Dataface_Record('call_parameters', array());
          // We insert the default values for the record.

@@ -2,7 +2,9 @@
 class tables_vocal_sac_tympanum {
 
 function __import__csv(&$data, $defaultValues=array()){
-    // build an array of Dataface_Record objects that are to be inserted based
+    
+	$SEP = ',';
+	// build an array of Dataface_Record objects that are to be inserted based
     // on the CSV file data.
     $records = array();
     
@@ -12,7 +14,10 @@ function __import__csv(&$data, $defaultValues=array()){
 	$i=0;
 	
     foreach ( $rows as $row ){
-		
+		//skip empty rows
+		if (strpos($row ,$SEP) ===  false) {
+			continue;
+		}
 		if($i == 0) {
 				
 			echo $row;
@@ -22,7 +27,7 @@ function __import__csv(&$data, $defaultValues=array()){
 		}
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
-        list($Id, $vocal_sac_manifestation,$vocal_sac_form,$vocal_sac_distensibility,$tympanum_covering,$tympanum_eye_ration) = explode(';', $row);
+        list($Id, $vocal_sac_manifestation,$vocal_sac_form,$vocal_sac_distensibility,$tympanum_covering,$tympanum_eye_ration) = str_getcsv($row, $SEP,'"') ; // explode(';', $row);
         
 		$vocal_sac_tympanum	= new Dataface_Record('vocal_sac_tympanum', array());
          // We insert the default values for the record.

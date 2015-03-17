@@ -3,7 +3,10 @@ class tables_distribution {
 
 
 function __import__csv(&$data, $defaultValues=array()){
-    // build an array of Dataface_Record objects that are to be inserted based
+    
+	
+	$SEP = ',';
+	// build an array of Dataface_Record objects that are to be inserted based
     // on the CSV file data.
     $records = array();
     
@@ -13,7 +16,10 @@ function __import__csv(&$data, $defaultValues=array()){
 	$i=0;
 	
     foreach ( $rows as $row ){
-		
+		//skip empty rows
+		if (strpos($row ,$SEP) ===  false) {
+			continue;
+		}
 		if($i == 0) {
 				
 			echo $row;
@@ -23,7 +29,7 @@ function __import__csv(&$data, $defaultValues=array()){
 		}
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
-        list($Id, $Continent,$Range_size1,$Range_size2,$Range,$elevation_min,$elevation_max) = explode(';', $row);
+        list($Id, $Continent,$Range_size1,$Range_size2,$Range,$elevation_min,$elevation_max) =  str_getcsv($row, $SEP,'"') ; //explode(';', $row);
         
 		$distribution = new Dataface_Record('distribution', array());
          // We insert the default values for the record.

@@ -20,13 +20,6 @@ function description__id(&$record){
     if (empty($id)) return $Species . '_' . $Genus;
 }
 
-
-
-
-	
-	
-	
-
 */		
 
 	function after_action_new($params=array()){
@@ -59,6 +52,7 @@ function description__id(&$record){
 	}
 	function __import__csv(&$data, $defaultValues=array()){
 	
+	$SEP = ','; //CSV separator
 	$this->isImport = 1;
     // build an array of Dataface_Record objects that are to be inserted based
     // on the CSV file data.
@@ -69,15 +63,22 @@ function description__id(&$record){
 	
 	$i=0;
 	
-    foreach ( $rows as $row ){
+	foreach ( $rows as $row ){
 		
+		//skip empty rows
+		if (strpos($row ,$SEP) ===  false) {
+			continue;
+		}
+			
 		if($i == 0) {
 				
-			#echo $row;
+		
 			$i++;
 		
 		continue;
 		}
+	
+		
 	
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
@@ -142,12 +143,12 @@ function description__id(&$record){
 			
 			
 
-			) = explode(';', $row);
+			) =  str_getcsv($row, $SEP,'"') ;//; explode(';', $row);
      
 		
 	 	if(empty($Id))
 			$Id = utf8_encode(trim($Genus)) .'_'. utf8_encode(trim($Species));
-		
+			
 		$record = new Dataface_Record('taxonomic_identity', array());
          // We insert the default values for the record.
         $record->setValues($defaultValues);  
@@ -401,7 +402,6 @@ function description__id(&$record){
 				array(
 					'id'=>trim($Id),
 					'call_perch_hight'=>trim($call_perch_hight),
-					'calling_behaviourcol'=>trim($calling_behaviourcol),
 					'to_water'=>trim($to_water),
 					'chorusing' => trim($chorusing),
 					'cover'=>trim($cover),
@@ -444,6 +444,7 @@ function description__id(&$record){
     // Now we return the array of records to be imported.
     return $records;
 }
+
 
 
 

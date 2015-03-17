@@ -1,0 +1,12 @@
+id,call_perch_hight,to_water,chorusing,cover,rapids_or_waterfalls
+1,litter,at_water,no,no,no
+10,semi_arboral,at_water,,no,yes
+11,litter,,yes,,no
+2,litter,at_water,no,no,no
+3,,,,,
+4,,,,,
+5,litter,at_water,,,no
+6,semi_arboral,at_water,,,no
+7,litter,no water,,no,no
+8,litter,at_water,,,no
+9,litter,no water,,,no

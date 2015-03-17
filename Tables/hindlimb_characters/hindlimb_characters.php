@@ -2,7 +2,10 @@
 class tables_hindlimb_characters {
 
 function __import__csv(&$data, $defaultValues=array()){
-    // build an array of Dataface_Record objects that are to be inserted based
+    
+	
+	$SEP = ',';
+	// build an array of Dataface_Record objects that are to be inserted based
     // on the CSV file data.
     $records = array();
     
@@ -12,7 +15,10 @@ function __import__csv(&$data, $defaultValues=array()){
 	$i=0;
 	
     foreach ( $rows as $row ){
-		
+		//skip empty rows
+		if (strpos($row ,$SEP) ===  false) {
+			continue;
+		}
 		if($i == 0) {
 				
 			echo $row;
@@ -24,7 +30,7 @@ function __import__csv(&$data, $defaultValues=array()){
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
         list($Id, $femur_length_min,$femur_length_max,$tibia_shank_length,$foot_length,$total_foot_length,$first_toe_length,$second_toe_length,
 			$third_toe_length,$fourth_toe_length,$fifth_toe_length,$webbing_on_toe,$dermal_fringe_along_toe,$lateral_dermal_fringe_on_toe,
-			$supernumerary_tubercle_on_toes,$inner_metatarsal_tubercle,$outer_metatarsal_tubercle) = explode(';', $row);
+			$supernumerary_tubercle_on_toes,$inner_metatarsal_tubercle,$outer_metatarsal_tubercle) = str_getcsv($row, $SEP,'"') ; //  explode(';', $row);
         
 		$hindlimb_characters	= new Dataface_Record('hindlimb_characters', array());
          // We insert the default values for the record.

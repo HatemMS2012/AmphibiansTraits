@@ -1,0 +1,12 @@
+id,vocal_sac_manifestation,vocal_sac_form,vocal_sac_distensibility,tympanum_covering,tympanum_eye_ration
+1,exterl,paired_subgular,weak,absent,1.1
+10,,single subgular,,visible,0.37
+11,exterl,single subgular,strong,concealed,0.6
+2,present,paired_lateral,strong,present,1.1
+3,,,,,
+4,,,,,
+5,exterl,single subgular,strong,concealed,0.5
+6,interl,single subgular,weak,visible,0.47
+7,,single subgular,,partly concealed,0.42
+8,interl,single subgular,,concealed,
+9,,single subgular,,visible,0.4

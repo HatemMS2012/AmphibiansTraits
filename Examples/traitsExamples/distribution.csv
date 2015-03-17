@@ -1,0 +1,12 @@
+id,Continent,Range_size1,Range_size2,Range,elevation_min,elevation_max
+1,Africa,146696,,fragmented,270,1078
+10,South east Asia,,,,,
+11,Africa,,,,,
+2,America,4478920,,continous,100,1300
+3,Europe,,,,,
+4,North America,1,1,continuos,,
+5,North America,,,,,
+6,South east Asia,,,,,
+7,South America,,,,,
+8,South America,,,,,
+9,Madagascar,,,,,

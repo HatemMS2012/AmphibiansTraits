@@ -2,7 +2,9 @@
 class tables_head_characters {
 
 function __import__csv(&$data, $defaultValues=array()){
-    // build an array of Dataface_Record objects that are to be inserted based
+    
+	$SEP = ',';
+	// build an array of Dataface_Record objects that are to be inserted based
     // on the CSV file data.
     $records = array();
     
@@ -12,7 +14,10 @@ function __import__csv(&$data, $defaultValues=array()){
 	$i=0;
 	
     foreach ( $rows as $row ){
-		
+		//skip empty rows
+		if (strpos($row ,$SEP) ===  false) {
+			continue;
+		}
 		if($i == 0) {
 				
 			echo $row;
@@ -24,7 +29,7 @@ function __import__csv(&$data, $defaultValues=array()){
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
         list($Id,$head_length,$head_width,$snout_length,$internarial_distance,$nostril_to_snout_distance,$eye_to_nostril,$maximum_tympanum_diameter,
 			$eye_length,$distance_between_front_of_eyes,$distance_between_behind_of_eyes,$interorbital_distance,$snout_shape_lateral,
-			$snout_shape_dorsal,$interorbital_shape,$loreal_region_shape,$canthus_rostralis,$nostril_shape,$tympanum_shape) = explode(';', $row);
+			$snout_shape_dorsal,$interorbital_shape,$loreal_region_shape,$canthus_rostralis,$nostril_shape,$tympanum_shape) = str_getcsv($row, $SEP,'"') ; // explode(';', $row);
         
 		$head_characters = new Dataface_Record('head_characters', array());
          // We insert the default values for the record.

@@ -1,0 +1,12 @@
+id,femur_length_min,femur_length_max,tibia_shank_length,foot_length,total_foot_length,first_toe_length,second_toe_length,third_toe_length,fourth_toe_length,fifth_toe_length,webbing_on_toe,dermal_fringe_along_toe,lateral_dermal_fringe_on_toe,supernumerary_tubercle_on_toes,inner_metatarsal_tubercle,outer_metatarsal_tubercle
+1,5.2,5.4,3.4,3.9,4.1,1.2,1.3,1.5,1.6,1.7,I1-2II1-2III1-2IV2-1V,yes,yes,no,no,yes
+10,,,,,,,,,,,,,,,,
+11,,,,,,,,,,,,,,,,
+2,5.2,5.4,3.4,3.9,4.1,1.2,1.3,1.5,1.6,1.7,I1-2II1-2III1-2IV2-1V,yes,no,no,yes,yes
+3,,,,,,,,,,,,,,,,
+4,8.1,8.1,,,,,,,,,,,,,,
+5,,,,,,,,,,,,,,,,
+6,,,,,,,,,,,,,,,,
+7,,,,,,,,,,,,,,,,
+8,,,,,,,,,,,,,,,,
+9,,,,,,,,,,,,,,,,
