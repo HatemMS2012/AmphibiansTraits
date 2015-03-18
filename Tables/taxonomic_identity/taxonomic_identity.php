@@ -24,7 +24,7 @@ function description__id(&$record){
 	
 	//relationships details view
 	function section__colorDetails(&$record){
-		
+		$noData = 1;
 		$colorationString = array();
 		
 		$relatedRecords = $record->getRelatedRecords('colouration');
@@ -44,35 +44,43 @@ function description__id(&$record){
 				
 	
 			if(isset($pattern)){
+				$noData = 0;
 				$colorationString .='<tr><th class="record-view-label">Pattern</th>	<td class="record-view-value">'.$pattern .'</td></tr>';
 			}
 			if(isset($color)){
+				$noData = 0;
 				$colorationString .='<tr><th class="record-view-label">Color</th>	<td class="record-view-value">'.$color .'</td></tr>';
 			}
 			if(isset($warty)){
+				$noData = 0;
 				$colorationString .='<tr><th class="record-view-label">Warty</th>	<td class="record-view-value">'.$warty .'</td></tr>';
 			}
 			if(isset($uni_vs_polymorph)){
+				$noData = 0;
 				$colorationString .='<tr><th class="record-view-label">UNI/Polymorph</th>	<td class="record-view-value">'.$uni_vs_polymorph .'</td></tr>';
 			}
 			
 			$colorationString .= '</tbody></table>'	;
 		}
 		
-		return array(
-			'content' => $colorationString ,
-			'class' => 'main',
-			'order' => 2,
-			'label' => 'Colouration Details'
-			
-			
-		);
+		if($noData == 1)
+			return array();
+		else	
+			return array(
+				'content' => $colorationString ,
+				'class' => 'main',
+				'order' => 3,
+				'label' => 'Colouration Details'
+				
+			);
 		
 	}
 	
 
 	//relationships details view
 	function section__distributionDetails(&$record){
+	
+		$noData = 1;
 		
 		$distributionString = array();
 		
@@ -95,37 +103,915 @@ function description__id(&$record){
 				
 	
 			if(isset($continent)){
+				$noData = 0;
 				$distributionString .='<tr><th class="record-view-label">Continent</th>	<td class="record-view-value">'.$continent .'</td></tr>';
 			}
 			if(isset($Range_size1)){
+				$noData = 0;
 				$distributionString .='<tr><th class="record-view-label">Range size 1</th>	<td class="record-view-value">'.$Range_size1 .'</td></tr>';
 			}
 			if(isset($Range_size2)){
+				$noData = 0;
 				$distributionString .='<tr><th class="record-view-label">Range size 2</th>	<td class="record-view-value">'.$Range_size2 .'</td></tr>';
 			}
 			if(isset($Range)){
+				$noData = 0;
 				$distributionString .='<tr><th class="record-view-label">Range</th>	<td class="record-view-value">'.$Range .'</td></tr>';
 			}
 			if(isset($elevation_min)){
+				$noData = 0;
 				$distributionString .='<tr><th class="record-view-label">Minimum Elevation</th>	<td class="record-view-value">'.$elevation_min .'</td></tr>';
 			}
 			if(isset($elevation_max)){
+				$noData = 0;
 				$distributionString .='<tr><th class="record-view-label">Maximum Elevation</th>	<td class="record-view-value">'.$elevation_max .'</td></tr>';
 			}
 			$distributionString .= '</tbody></table>';
 			}
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $distributionString ,
+					'class' => 'main',
+					'order' => 2,
+					'label' => 'Distribution Details',
+			
+				);
 		
-			return array(
-				'content' => $distributionString ,
-				'class' => 'main',
-				'order' => 1,
-				'label' => 'Distribution Details',
+	}
+	
+	function section__bodysizeDetails(&$record){
+		$noData = 1;
+		$contentStr = array();
 		
-			);
+		$relatedRecords = $record->getRelatedRecords('bodysize');
+		
+		foreach ($relatedRecords as $distribution){
+			
+			
+			$svl_male_min= $distribution['svl_male_min'];
+			$svl_male_max=  $distribution['svl_male_max'];
+			$svl_male_mean=  $distribution['svl_male_mean'];
+			$svl_female_min=  $distribution['svl_female_min'];
+			$svl_female_max=  $distribution['elevation_min'];
+			$svl_female_mean=  $distribution['elevation_max'];
+			
+			
+			$contentStr = '<table class="record-view-table"> <tbody>';
+				
+	
+			if(isset($svl_male_min)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Minimum snout-vent length for male</th>	<td class="record-view-value">'.$svl_male_min .'</td></tr>';
+			}
+			if(isset($svl_male_max)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Maximum snout-vent length for male</th>	<td class="record-view-value">'.$svl_male_max .'</td></tr>';
+			}
+			if(isset($svl_male_mean)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Mean snout-vent length for male</th>	<td class="record-view-value">'.$svl_male_mean .'</td></tr>';
+			}
+			if(isset($svl_female_min)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Minimum snout-vent length for female</th>	<td class="record-view-value">'.$svl_female_min .'</td></tr>';
+			}
+			if(isset($svl_female_max)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Maximum snout-vent length for female</th>	<td class="record-view-value">'.$svl_female_max .'</td></tr>';
+			}
+			if(isset($svl_female_mean)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Mean snout-vent length for female</th>	<td class="record-view-value">'.$svl_female_mean .'</td></tr>';
+			}
+			$contentStr .= '</tbody></table>';
+			}
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $contentStr ,
+					'class' => 'main',
+					'order' => 4,
+					'label' => 'Body Size Details',
+			
+				);
+		
+	}
+	function section__callParametersDetails(&$record){
+		$noData = 1;
+		$contentStr = array();
+		
+		$relatedRecords = $record->getRelatedRecords('call_parameters');
+		
+		foreach ($relatedRecords as $relatedRecord){
+			
+			$fundamental_frequency= $relatedRecord['fundamental_frequency'];
+			$dominant_frequency= $relatedRecord['dominant_frequency'];
+			$call_duration=  $relatedRecord['call_duration'];
+			$pulserate=  $relatedRecord['pulserate'];
+			$note_duration=  $relatedRecord['note_duration'];
+			$call_guild=  $relatedRecord['call_guild'];
+			$min_frequency=  $relatedRecord['min_frequency'];
+			$max_frequency=  $relatedRecord['max_frequency'];
+			$dominant_frequency_modulation=  $relatedRecord['dominant_frequency_modulation'];
+			
+			
+			$contentStr = '<table class="record-view-table"> <tbody>';
+			
+
+			if(isset($fundamental_frequency)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Fundamental frequency</th>	<td class="record-view-value">'.$fundamental_frequency .'</td></tr>';
+			}			
+	
+			if(isset($dominant_frequency)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Dominant frequency</th>	<td class="record-view-value">'.$dominant_frequency .'</td></tr>';
+			}
+			if(isset($pulserate)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Pulse rate</th>	<td class="record-view-value">'.$pulserate .'</td></tr>';
+			}
+			if(isset($call_duration)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Call duration</th>	<td class="record-view-value">'.$call_duration .'</td></tr>';
+			}
+			
+			if(isset($note_duration)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Note duration</th>	<td class="record-view-value">'.$note_duration .'</td></tr>';
+			}
+			if(isset($call_guild)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Call guild</th>	<td class="record-view-value">'.$call_guild .'</td></tr>';
+			}
+			if(isset($min_frequency)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Minimum frequency</th>	<td class="record-view-value">'.$min_frequency .'</td></tr>';
+			}
+			if(isset($max_frequency)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Maximum frequency</th>	<td class="record-view-value">'.$max_frequency .'</td></tr>';
+			}
+			if(isset($dominant_frequency_modulation)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Dominant frequency modulation</th>	<td class="record-view-value">'.$dominant_frequency_modulation .'</td></tr>';
+			}
+			$contentStr .= '</tbody></table>';
+			}
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $contentStr ,
+					'class' => 'main',
+					'order' => 10,
+					'label' => 'Call Parameters Details',
+			
+				);
+		
+	}
+	
+	function section__callBehaviorDetails(&$record){
+		$noData = 1;
+		$contentStr = array();
+		
+		$relatedRecords = $record->getRelatedRecords('calling_behaviour');
+		
+		foreach ($relatedRecords as $relatedRecord){
+			
+			$call_perch_hight= $relatedRecord['call_perch_hight'];
+			$to_water= $relatedRecord['to_water'];
+			$chorusing=  $relatedRecord['chorusing'];
+			$cover=  $relatedRecord['cover'];
+			$rapids_or_waterfalls=  $relatedRecord['rapids_or_waterfalls'];
+			
+			
+			$contentStr = '<table class="record-view-table"> <tbody>';
+			
+
+			if(isset($call_perch_hight)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">rapids_or_waterfalls</th>	<td class="record-view-value">'.$call_perch_hight .'</td></tr>';
+			}			
+	
+			if(isset($to_water)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">To Water</th>	<td class="record-view-value">'.$to_water .'</td></tr>';
+			}
+			if(isset($cover)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Chorusing</th>	<td class="record-view-value">'.$cover .'</td></tr>';
+			}
+			if(isset($chorusing)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Cover</th>	<td class="record-view-value">'.$chorusing .'</td></tr>';
+			}
+			
+			if(isset($rapids_or_waterfalls)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Rapids/Waterfalls</th>	<td class="record-view-value">'.$rapids_or_waterfalls .'</td></tr>';
+			}
+			
+			$contentStr .= '</tbody></table>';
+			}
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $contentStr ,
+					'class' => 'main',
+					'order' => 11,
+					'label' => 'Calling Behaviour Details',
+					
+			
+				);
+		
+	}
+	
+	function section__vocalSacDetails(&$record){
+		$noData = 1;
+		$contentStr = array();
+		
+		$relatedRecords = $record->getRelatedRecords('vocal_sac_tympanum');
+		
+		foreach ($relatedRecords as $relatedRecord){
+			
+			$vocal_sac_manifestation= $relatedRecord['vocal_sac_manifestation'];
+			$vocal_sac_form= $relatedRecord['vocal_sac_form'];
+			$vocal_sac_distensibility=  $relatedRecord['vocal_sac_distensibility'];
+			$tympanum_covering=  $relatedRecord['tympanum_covering'];
+			$tympanum_eye_ration=  $relatedRecord['tympanum_eye_ration'];
+			
+			
+			$contentStr = '<table class="record-view-table"> <tbody>';
+			
+
+			if(isset($vocal_sac_manifestation)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Vocal sac manifestation</th>	<td class="record-view-value">'.$vocal_sac_manifestation .'</td></tr>';
+			}			
+	
+			if(isset($vocal_sac_form)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Vocal sac form </th><td class="record-view-value">'.$vocal_sac_form .'</td></tr>';
+			}
+			
+			if(isset($vocal_sac_distensibility)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Vocal sac distensibility </th>	<td class="record-view-value">'.$vocal_sac_distensibility .'</td></tr>';
+			}
+			if(isset($tympanum_covering)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Tympanum covering	</th><td class="record-view-value">'.$tympanum_covering .'</td></tr>';
+			}
+			if(isset($tympanum_eye_ration)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Tympanum eye ration</th>	<td class="record-view-value">'.$tympanum_eye_ration .'</td></tr>';
+			}
+			
+			$contentStr .= '</tbody></table>';
+			}
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $contentStr ,
+					'class' => 'main',
+					'order' => 8,
+					'label' => 'Vocal sac tympanum Details',
+			
+				);
+		
+	}
+	
+	function section__miscDetails(&$record){
+		$noData = 1;
+		$contentStr = array();
+		
+		$relatedRecords = $record->getRelatedRecords('misc');
+		
+		foreach ($relatedRecords as $relatedRecord){
+			
+			$daily_activity= $relatedRecord['daily_activity'];
+			$reproductive_mode= $relatedRecord['reproductive_mode'];
+			$tadpole_habitat=  $relatedRecord['tadpole_habitat'];
+			$tadpole_feeding=  $relatedRecord['tadpole_feeding'];
+			$maternal_care=  $relatedRecord['maternal_care'];
+			
+			
+			$maternal_care_details=  $relatedRecord['maternal_care_details'];
+
+			$abundance=  $relatedRecord['abundance'];
+
+			$stratigraphic_range=  $relatedRecord['stratigraphic_range'];
+
+			$f_environment_type=  $relatedRecord['f_environment_type'];
+
+			$diet=  $relatedRecord['diet'];
+
+			$climate=  $relatedRecord['climate'];
+
+			$holotype=  $relatedRecord['holotype'];
+
+			
+			$contentStr = '<table class="record-view-table"> <tbody>';
+			
+
+			if(isset($daily_activity)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Daily activity</th>	<td class="record-view-value">'.$daily_activity .'</td></tr>';
+			}			
+	
+			if(isset($reproductive_mode)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Reproductive mode</th>	<td class="record-view-value">'.$reproductive_mode .'</td></tr>';
+			}
+			if(isset($tadpole_habitat)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Tadpole habitat</th>	<td class="record-view-value">'.$tadpole_habitat .'</td></tr>';
+			}
+			if(isset($tadpole_feeding)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Tadpole feeding</th>	<td class="record-view-value">'.$tadpole_feeding .'</td></tr>';
+			}
+			
+			
+			if(isset($maternal_care)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label"> Maternal care</th>	<td class="record-view-value">'.$maternal_care .'</td></tr>';
+			}
+			
+			if(isset($maternal_care_details)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label"> Maternal care details</th>	<td class="record-view-value">'.$maternal_care_details .'</td></tr>';
+			}
+			
+			if(isset($abundance)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Abundance</th>	<td class="record-view-value">'.$abundance .'</td></tr>';
+			}
+			
+			if(isset($stratigraphic_range)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Stratigraphic range</th>	<td class="record-view-value">'.$stratigraphic_range .'</td></tr>';
+			}
+			if(isset($f_environment_type)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Environment type</th>	<td class="record-view-value">'.$f_environment_type .'</td></tr>';
+			}
+			if(isset($diet)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Diet</th>	<td class="record-view-value">'.$diet .'</td></tr>';
+			}
+			
+			if(isset($climate)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Climate</th>	<td class="record-view-value">'.$climate .'</td></tr>';
+			}
+			
+			if(isset($holotype)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Holotype</th>	<td class="record-view-value">'.$holotype .'</td></tr>';
+			}
+			
+			
+			
+			$contentStr .= '</tbody></table>';
+			}
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $contentStr ,
+					'class' => 'main',
+					'order' => 14,
+					'label' => 'Misc',
+			
+				);
+		
+	}
+	function section__ForelimbDetails(&$record){
+		$noData = 1;
+		$contentStr = array();
+		
+		$relatedRecords = $record->getRelatedRecords('forlimb_characters');
+		
+		foreach ($relatedRecords as $distribution){
+			
+			
+			$forelimb_length= $distribution['forelimb_length'];
+			$humerus_length_min=  $distribution['humerus_length_min'];
+			$humerus_length_max=  $distribution['humerus_length_max'];
+			$hand_length=  $distribution['hand_length'];
+			$first_finger_length=  $distribution['first_finger_length'];
+			$second_finger_length=  $distribution['second_finger_length'];
+			$third_finger_length=  $distribution['third_finger_length'];
+			$forth_finger_length=  $distribution['forth_finger_length'];
+			$finger_disk=  $distribution['finger_disk'];
+			$dermal_fringe_along_finger=  $distribution['dermal_fringe_along_finger'];
+			
+			$lateral_dermal_fringe_on_finger=  $distribution['lateral_dermal_fringe_on_finger'];
+			$inner_palmar_tubercle=  $distribution['inner_palmar_tubercle'];
+			$inner_palmar_tubercle=  $distribution['inner_palmar_tubercle'];
+			
+			$outer_plmar_tubercle=  $distribution['outer_plmar_tubercle'];
+			$webbing_on_finger=  $distribution['webbing_on_finger'];
+			
+			
+			
+			
+			$contentStr = '<table class="record-view-table"> <tbody>';
+				
+	
+			if(isset($forelimb_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Forelimb length</th>	<td class="record-view-value">'.$forelimb_length .'</td></tr>';
+			}
+			if(isset($humerus_length_min)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Minimum humerus length</th>	<td class="record-view-value">'.$humerus_length_min .'</td></tr>';
+			}
+			if(isset($humerus_length_max)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Maximum humerus length</th>	<td class="record-view-value">'.$humerus_length_max .'</td></tr>';
+			}
+			if(isset($hand_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Hand length</th>	<td class="record-view-value">'.$hand_length .'</td></tr>';
+			}
+			if(isset($first_finger_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">First finger length</th>	<td class="record-view-value">'.$first_finger_length .'</td></tr>';
+			}
+			if(isset($second_finger_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Second finger length</th>	<td class="record-view-value">'.$second_finger_length .'</td></tr>';
+			}
+			if(isset($third_finger_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Third finger length</th>	<td class="record-view-value">'.$third_finger_length .'</td></tr>';
+			}
+			if(isset($forth_finger_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Forth finger length</th>	<td class="record-view-value">'.$forth_finger_length .'</td></tr>';
+			}
+			if(isset($finger_disk)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Finger disk</th>	<td class="record-view-value">'.$finger_disk .'</td></tr>';
+			}
+			if(isset($dermal_fringe_along_finger)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Dermal fringe along finger</th>	<td class="record-view-value">'.$dermal_fringe_along_finger .'</td></tr>';
+			}
+			if(isset($lateral_dermal_fringe_on_finger)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Lateral dermal fringe on finger</th>	<td class="record-view-value">'.$lateral_dermal_fringe_on_finger .'</td></tr>';
+			}
+			if(isset($webbing_on_finger)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Webbing on finger</th>	<td class="record-view-value">'.$webbing_on_finger .'</td></tr>';
+			}
+			
+			if(isset($inner_palmar_tubercle)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Inner palmar tubercle</th>	<td class="record-view-value">'.$inner_palmar_tubercle .'</td></tr>';
+			}
+			if(isset($outer_plmar_tubercle)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Outer plmar tubercle</th>	<td class="record-view-value">'.$outer_plmar_tubercle .'</td></tr>';
+			}
+			if(isset($supernumerary_tubercle_on_finger)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Supernumerary tubercle on finger</th>	<td class="record-view-value">'.$supernumerary_tubercle_on_finger .'</td></tr>';
+			}
+			$contentStr .= '</tbody></table>';
+			}
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $contentStr ,
+					'class' => 'main',
+					'order' => 5,
+					'label' => 'Forelimb Details',
+			
+				);
 		
 	}
 	
 	
+	function section__hindlimbDetails(&$record){
+		$noData = 1;
+		$contentStr = array();
+		
+		$relatedRecords = $record->getRelatedRecords('hindlimb_characters');
+		
+		foreach ($relatedRecords as $distribution){
+			
+			
+			$femur_length_min= $distribution['femur_length_min'];
+			$femur_length_max=  $distribution['femur_length_max'];
+			$humerus_length_max=  $distribution['humerus_length_max'];
+			$tibia_shank_length=  $distribution['tibia_shank_length'];
+			$foot_length=  $distribution['foot_length'];
+			$total_foot_length=  $distribution['total_foot_length'];
+			$first_toe_length=  $distribution['first_toe_length'];
+			$second_toe_length=  $distribution['second_toe_length'];
+			$third_toe_length=  $distribution['third_toe_length'];
+			$fourth_toe_length=  $distribution['fourth_toe_length'];
+			$fifth_toe_length=  $distribution['fifth_toe_length'];
+			$dermal_fringe_along_toe=  $distribution['dermal_fringe_along_toe'];
+			$lateral_dermal_fringe_on_toe=  $distribution['lateral_dermal_fringe_on_toe'];
+			$supernumerary_tubercle_on_toes=  $distribution['supernumerary_tubercle_on_toes'];
+			$inner_metatarsal_tubercle=  $distribution['inner_metatarsal_tubercle'];
+			$outer_metatarsal_tubercle=  $distribution['outer_metatarsal_tubercle'];
+			$webbing_on_toe=  $distribution['webbing_on_toe'];
+				
+			
+			
+			
+			$contentStr = '<table class="record-view-table"> <tbody>';
+				
+	
+			if(isset($femur_length_min)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Minimum femur length</th>	<td class="record-view-value">'.$femur_length_min .'</td></tr>';
+			}
+			if(isset($femur_length_max)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Maximum Femur length</th>	<td class="record-view-value">'.$femur_length_max .'</td></tr>';
+			}
+			if(isset($humerus_length_max)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Maximum humerus length</th>	<td class="record-view-value">'.$humerus_length_max .'</td></tr>';
+			}
+			if(isset($tibia_shank_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Tibia shank length</th>	<td class="record-view-value">'.$tibia_shank_length .'</td></tr>';
+			}
+			if(isset($foot_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Foot length</th>	<td class="record-view-value">'.$foot_length .'</td></tr>';
+			}
+			if(isset($total_foot_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Total foot length</th>	<td class="record-view-value">'.$total_foot_length .'</td></tr>';
+			}
+			if(isset($first_toe_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">First toe length</th>	<td class="record-view-value">'.$first_toe_length .'</td></tr>';
+			}
+			if(isset($second_toe_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Second toe length</th>	<td class="record-view-value">'.$second_toe_length .'</td></tr>';
+			}
+			if(isset($third_toe_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Third toe length</th>	<td class="record-view-value">'.$third_toe_length .'</td></tr>';
+			}
+			if(isset($fourth_toe_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Fourth toe length</th>	<td class="record-view-value">'.$fourth_toe_length .'</td></tr>';
+			}
+			if(isset($fifth_toe_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Fifth toe length</th>	<td class="record-view-value">'.$fifth_toe_length .'</td></tr>';
+			}
+			if(isset($webbing_on_toe)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Webbing on toe</th>	<td class="record-view-value">'.$webbing_on_toe .'</td></tr>';
+			}
+			
+			if(isset($dermal_fringe_along_toe)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Dermal fringe along toe</th>	<td class="record-view-value">'.$dermal_fringe_along_toe .'</td></tr>';
+			}
+			if(isset($lateral_dermal_fringe_on_toe)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Lateral dermal fringe on toe</th>	<td class="record-view-value">'.$lateral_dermal_fringe_on_toe .'</td></tr>';
+			}
+			if(isset($supernumerary_tubercle_on_toes)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Supernumerary tubercle on toes</th>	<td class="record-view-value">'.$supernumerary_tubercle_on_toes .'</td></tr>';
+			}
+			
+			if(isset($inner_metatarsal_tubercle)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Inner metatarsal tubercle</th>	<td class="record-view-value">'.$inner_metatarsal_tubercle .'</td></tr>';
+			}
+			if(isset($outer_metatarsal_tubercle)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Outer plmar tubercle</th>	<td class="record-view-value">'.$outer_metatarsal_tubercle .'</td></tr>';
+			}
+			$contentStr .= '</tbody></table>';
+			}
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $contentStr ,
+					'class' => 'main',
+					'order' => 6,
+					'label' => 'Hindlimb Details',
+			
+				);
+		
+	}
+	function section__headDetails(&$record){
+		$noData = 1;
+		$contentStr = array();
+		
+		$relatedRecords = $record->getRelatedRecords('head_char');
+		
+		foreach ($relatedRecords as $distribution){
+			
+			
+			$head_length= $distribution['head_length'];
+			$head_width=  $distribution['head_width'];
+			$snout_length=  $distribution['snout_length'];
+			$internarial_distance=  $distribution['internarial_distance'];
+			$nostril_to_snout_distance=  $distribution['nostril_to_snout_distance'];
+			$total_nostril_to_snout_distance=  $distribution['total_nostril_to_snout_distance'];
+			$eye_to_nostril=  $distribution['eye_to_nostril'];
+			$maximum_tympanum_diameter=  $distribution['maximum_tympanum_diameter'];
+			$eye_length=  $distribution['eye_length'];
+			$distance_between_front_of_eyes=  $distribution['distance_between_front_of_eyes'];
+			$distance_between_behind_of_eyes=  $distribution['distance_between_behind_of_eyes'];
+			$interorbital_distance=  $distribution['interorbital_distance'];
+			$snout_shape_lateral=  $distribution['snout_shape_lateral'];
+			$snout_shape_dorsal=  $distribution['snout_shape_dorsal'];
+			$interorbital_shape=  $distribution['interorbital_shape'];
+			$pineal_oscilus=  $distribution['pineal_oscilus'];
+			$loreal_region_shape=  $distribution['loreal_region_shape'];
+			$canthus_rostralis=  $distribution['canthus_rostralis'];
+			$nostril_shape=  $distribution['nostril_shape']; 
+			$tympanum_shape=  $distribution['tympanum_shape'];
+			
+			
+			$contentStr = '<table class="record-view-table"> <tbody>';
+				
+	
+			if(isset($head_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Head length</th>	<td class="record-view-value">'.$head_length .'</td></tr>';
+			}
+			if(isset($head_width)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Head width</th>	<td class="record-view-value">'.$head_width .'</td></tr>';
+			}
+			if(isset($snout_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Snout length</th>	<td class="record-view-value">'.$snout_length .'</td></tr>';
+			}
+			if(isset($internarial_distance)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Internarial distance</th>	<td class="record-view-value">'.$internarial_distance .'</td></tr>';
+			}
+			if(isset($nostril_to_snout_distance)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Nostril to snout distance</th>	<td class="record-view-value">'.$nostril_to_snout_distance .'</td></tr>';
+			}
+			if(isset($total_nostril_to_snout_distance)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Total foot length</th>	<td class="record-view-value">'.$total_nostril_to_snout_distance .'</td></tr>';
+			}
+			if(isset($eye_to_nostril)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Eye to nostril</th>	<td class="record-view-value">'.$eye_to_nostril .'</td></tr>';
+			}
+			if(isset($maximum_tympanum_diameter)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Maximum tympanum diameter</th>	<td class="record-view-value">'.$maximum_tympanum_diameter .'</td></tr>';
+			}
+			if(isset($eye_length)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Eye length</th>	<td class="record-view-value">'.$eye_length .'</td></tr>';
+			}
+			if(isset($distance_between_front_of_eyes)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Distance between front of eyes</th>	<td class="record-view-value">'.$distance_between_front_of_eyes .'</td></tr>';
+			}
+			if(isset($distance_between_behind_of_eyes)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Distance between behind of eyes</th>	<td class="record-view-value">'.$distance_between_behind_of_eyes .'</td></tr>';
+			}
+				
+			if(isset($interorbital_distance)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Interorbital distance</th>	<td class="record-view-value">'.$interorbital_distance .'</td></tr>';
+			}
+			if(isset($snout_shape_lateral)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Snout shape lateral</th>	<td class="record-view-value">'.$snout_shape_lateral .'</td></tr>';
+			}
+			if(isset($snout_shape_dorsal)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Snout shape dorsal</th>	<td class="record-view-value">'.$snout_shape_dorsal .'</td></tr>';
+			}
+			
+			if(isset($interorbital_shape)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Interorbital shape</th>	<td class="record-view-value">'.$interorbital_shape .'</td></tr>';
+			}
+			if(isset($pineal_oscilus)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Pineal oscilus</th>	<td class="record-view-value">'.$pineal_oscilus .'</td></tr>';
+			}
+			
+			if(isset($loreal_region_shape)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Loreal region shape</th>	<td class="record-view-value">'.$loreal_region_shape .'</td></tr>';
+			}
+			if(isset($canthus_rostralis)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Canthus rostralis</th>	<td class="record-view-value">'.$canthus_rostralis .'</td></tr>';
+			}
+			if(isset($nostril_shape)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Nostril shape</th>	<td class="record-view-value">'.$nostril_shape .'</td></tr>';
+			}
+			
+			if(isset($tympanum_shape)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Tympanum shape</th>	<td class="record-view-value">'.$tympanum_shape .'</td></tr>';
+			}
+			
+			
+			$contentStr .= '</tbody></table>';
+			}
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $contentStr ,
+					'class' => 'main',
+					'order' => 7,
+					'label' => 'Head Details',
+			
+				);
+		
+	}
+	
+	function section__eggDetails(&$record){
+		$noData = 1;
+		$contentStr = array();
+		
+		$relatedRecords = $record->getRelatedRecords('egg_deposition');
+		
+		foreach ($relatedRecords as $distribution){
+			
+			
+			$location= $distribution['location'];
+			$details=  $distribution['details'];
+			$clutchsize_eggs_min=  $distribution['clutchsize_eggs_min'];
+			$clutchsize_eggs_max=  $distribution['clutchsize_eggs_max'];
+			$clutchsize_eggs_class=  $distribution['clutchsize_eggs_class'];
+			$clutchsize_method=  $distribution['clutchsize_method'];
+			$egg_diameter_without_jelly=  $distribution['egg_diameter_without_jelly'];
+			$egg_diameter_with_jelly=  $distribution['egg_diameter_with_jelly'];
+			$clutch_structure=  $distribution['clutch_structure'];
+			
+			
+			
+			$contentStr = '<table class="record-view-table"> <tbody>';
+				
+	
+		
+			if(isset($clutchsize_eggs_min)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Minimum number of eggs</th>	<td class="record-view-value">'.$clutchsize_eggs_min .'</td></tr>';
+			}
+			if(isset($clutchsize_eggs_max)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Maximum number of eggs</th>	<td class="record-view-value">'.$clutchsize_eggs_max .'</td></tr>';
+			}
+			if(isset($clutchsize_eggs_class)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Size class</th>	<td class="record-view-value">'.$clutchsize_eggs_class .'</td></tr>';
+			}
+			if(isset($clutchsize_method)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Method</th>	<td class="record-view-value">'.$clutchsize_method .'</td></tr>';
+			}
+			if(isset($egg_diameter_without_jelly)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Egg diameter without jelly</th>	<td class="record-view-value">'.$egg_diameter_without_jelly .'</td></tr>';
+			}
+			if(isset($egg_diameter_with_jelly)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Egg diameter with jelly</th>	<td class="record-view-value">'.$egg_diameter_with_jelly .'</td></tr>';
+			}
+			if(isset($clutch_structure)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Location</th>	<td class="record-view-value">'.$clutch_structure .'</td></tr>';
+			}
+			if(isset($location)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Location</th>	<td class="record-view-value">'.$location .'</td></tr>';
+			}
+			if(isset($details)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Details</th>	<td class="record-view-value">'.$details .'</td></tr>';
+			}
+			
+			
+			$contentStr .= '</tbody></table>';
+			}
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $contentStr ,
+					'class' => 'main',
+					'order' => 8,
+					'label' => 'Egg Details',
+			
+				);
+		
+	}
+	
+	function section__icunThreatDetails(&$record){
+		$noData = 1;
+		$contentStr = array();
+		
+		$relatedRecords = $record->getRelatedRecords('iucn_threat');
+		
+		foreach ($relatedRecords as $distribution){
+			
+			
+			$threat_category= $distribution['threat_category'];
+			$population_decline=  $distribution['population_decline'];
+			
+			$contentStr = '<table class="record-view-table"> <tbody>';
+				
+	
+			if(isset($threat_category)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Threat Category</th>	<td class="record-view-value">'.$threat_category .'</td></tr>';
+			}
+			if(isset($population_decline)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Population Decline</th>	<td class="record-view-value">'.$population_decline .'</td></tr>';
+			}
+			
+			
+			$contentStr .= '</tbody></table>';
+			}
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $contentStr ,
+					'class' => 'main',
+					'order' => 12,
+					'label' => 'ICUN Threat Details',
+			
+				);
+		
+	}
+	
+	function section__habitatDetails(&$record){
+		$noData = 1;
+		$contentStr = array();
+		
+		$relatedRecords = $record->getRelatedRecords('habitat_preference');
+		
+		foreach ($relatedRecords as $distribution){
+			
+			
+			$macro= $distribution['macro'];
+			$micro=  $distribution['micro'];
+			
+			$contentStr = '<table class="record-view-table"> <tbody>';
+				
+	
+			if(isset($macro)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Preferred macro habitat</th>	<td class="record-view-value">'.$macro .'</td></tr>';
+			}
+			if(isset($micro)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Preferred micro habitat</th>	<td class="record-view-value">'.$micro .'</td></tr>';
+			}
+			
+			
+			$contentStr .= '</tbody></table>';
+			}
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $contentStr ,
+					'class' => 'main',
+					'order' => 11,
+					'label' => 'Habitat Details',
+			
+				);
+		
+	}
 	
 	
 	//detailed display
