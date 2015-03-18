@@ -21,6 +21,124 @@ function description__id(&$record){
 }
 
 */		
+	
+	//relationships details view
+	function section__colorDetails(&$record){
+		
+		$colorationString = array();
+		
+		$relatedRecords = $record->getRelatedRecords('colouration');
+		
+		foreach ($relatedRecords as $coloration){
+			
+			
+			$pattern= $coloration['pattern'];
+			
+			$color=  $coloration['colour'];
+			
+			$warty=  $coloration['warty'];
+			
+			$uni_vs_polymorph=  $coloration['uni_vs_polymorph'];
+			
+			$colorationString = '<table class="record-view-table"> <tbody>';
+				
+	
+			if(isset($pattern)){
+				$colorationString .='<tr><th class="record-view-label">Pattern</th>	<td class="record-view-value">'.$pattern .'</td></tr>';
+			}
+			if(isset($color)){
+				$colorationString .='<tr><th class="record-view-label">Color</th>	<td class="record-view-value">'.$color .'</td></tr>';
+			}
+			if(isset($warty)){
+				$colorationString .='<tr><th class="record-view-label">Warty</th>	<td class="record-view-value">'.$warty .'</td></tr>';
+			}
+			if(isset($uni_vs_polymorph)){
+				$colorationString .='<tr><th class="record-view-label">UNI/Polymorph</th>	<td class="record-view-value">'.$uni_vs_polymorph .'</td></tr>';
+			}
+			
+			$colorationString .= '</tbody></table>'	;
+		}
+		
+		return array(
+			'content' => $colorationString ,
+			'class' => 'main',
+			'order' => 2,
+			'label' => 'Colouration Details'
+			
+			
+		);
+		
+	}
+	
+
+	//relationships details view
+	function section__distributionDetails(&$record){
+		
+		$distributionString = array();
+		
+		$relatedRecords = $record->getRelatedRecords('distribution');
+		
+		foreach ($relatedRecords as $distribution){
+			
+			
+			$continent= $distribution['Continent'];
+			
+			$Range_size1=  $distribution['Range_size1'];
+			
+			$Range_size1=  $distribution['Range_size1'];
+			$Range=  $distribution['Range'];
+			$elevation_min=  $distribution['elevation_min'];
+			$elevation_max=  $distribution['elevation_max'];
+			
+			
+			$distributionString = '<table class="record-view-table"> <tbody>';
+				
+	
+			if(isset($continent)){
+				$distributionString .='<tr><th class="record-view-label">Continent</th>	<td class="record-view-value">'.$continent .'</td></tr>';
+			}
+			if(isset($Range_size1)){
+				$distributionString .='<tr><th class="record-view-label">Range size 1</th>	<td class="record-view-value">'.$Range_size1 .'</td></tr>';
+			}
+			if(isset($Range_size2)){
+				$distributionString .='<tr><th class="record-view-label">Range size 2</th>	<td class="record-view-value">'.$Range_size2 .'</td></tr>';
+			}
+			if(isset($Range)){
+				$distributionString .='<tr><th class="record-view-label">Range</th>	<td class="record-view-value">'.$Range .'</td></tr>';
+			}
+			if(isset($elevation_min)){
+				$distributionString .='<tr><th class="record-view-label">Minimum Elevation</th>	<td class="record-view-value">'.$elevation_min .'</td></tr>';
+			}
+			if(isset($elevation_max)){
+				$distributionString .='<tr><th class="record-view-label">Maximum Elevation</th>	<td class="record-view-value">'.$elevation_max .'</td></tr>';
+			}
+			$distributionString .= '</tbody></table>';
+			}
+		
+			return array(
+				'content' => $distributionString ,
+				'class' => 'main',
+				'order' => 1,
+				'label' => 'Distribution Details',
+		
+			);
+		
+	}
+	
+	
+	
+	
+	//detailed display
+	function imageurl__htmlValue(&$record){
+		return '<img src="'.$record->display('imageurl').'"  width="300"></img>';
+	} 
+	
+	//list display
+	function imageurl__renderCell(&$record){
+		return '<img src="'.$record->display('imageurl').'" width="150"/>';
+	}
+
+	
 
 	function after_action_new($params=array()){
 		$record =& $params['record'];
