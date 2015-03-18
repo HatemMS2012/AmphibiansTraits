@@ -68,7 +68,7 @@ function description__id(&$record){
 		else	
 			return array(
 				'content' => $colorationString ,
-				'class' => 'main',
+				'class' => 'left',
 				'order' => 3,
 				'label' => 'Colouration Details'
 				
@@ -133,7 +133,7 @@ function description__id(&$record){
 			else	
 				return array(
 					'content' => $distributionString ,
-					'class' => 'main',
+					'class' => 'left',
 					'order' => 2,
 					'label' => 'Distribution Details',
 			
@@ -192,7 +192,7 @@ function description__id(&$record){
 			else	
 				return array(
 					'content' => $contentStr ,
-					'class' => 'main',
+					'class' => 'left',
 					'order' => 4,
 					'label' => 'Body Size Details',
 			
@@ -266,7 +266,7 @@ function description__id(&$record){
 			else	
 				return array(
 					'content' => $contentStr ,
-					'class' => 'main',
+					'class' => 'left',
 					'order' => 10,
 					'label' => 'Call Parameters Details',
 			
@@ -322,7 +322,7 @@ function description__id(&$record){
 			else	
 				return array(
 					'content' => $contentStr ,
-					'class' => 'main',
+					'class' => 'left',
 					'order' => 11,
 					'label' => 'Calling Behaviour Details',
 					
@@ -379,7 +379,7 @@ function description__id(&$record){
 			else	
 				return array(
 					'content' => $contentStr ,
-					'class' => 'main',
+					'class' => 'left',
 					'order' => 8,
 					'label' => 'Vocal sac tympanum Details',
 			
@@ -486,7 +486,7 @@ function description__id(&$record){
 			else	
 				return array(
 					'content' => $contentStr ,
-					'class' => 'main',
+					'class' => 'left',
 					'order' => 14,
 					'label' => 'Misc',
 			
@@ -594,7 +594,7 @@ function description__id(&$record){
 			else	
 				return array(
 					'content' => $contentStr ,
-					'class' => 'main',
+					'class' => 'left',
 					'order' => 5,
 					'label' => 'Forelimb Details',
 			
@@ -713,7 +713,7 @@ function description__id(&$record){
 			else	
 				return array(
 					'content' => $contentStr ,
-					'class' => 'main',
+					'class' => 'left',
 					'order' => 6,
 					'label' => 'Hindlimb Details',
 			
@@ -847,7 +847,7 @@ function description__id(&$record){
 			else	
 				return array(
 					'content' => $contentStr ,
-					'class' => 'main',
+					'class' => 'left',
 					'order' => 7,
 					'label' => 'Head Details',
 			
@@ -925,7 +925,7 @@ function description__id(&$record){
 			else	
 				return array(
 					'content' => $contentStr ,
-					'class' => 'main',
+					'class' => 'left',
 					'order' => 8,
 					'label' => 'Egg Details',
 			
@@ -965,7 +965,7 @@ function description__id(&$record){
 			else	
 				return array(
 					'content' => $contentStr ,
-					'class' => 'main',
+					'class' => 'left',
 					'order' => 12,
 					'label' => 'ICUN Threat Details',
 			
@@ -1005,7 +1005,7 @@ function description__id(&$record){
 			else	
 				return array(
 					'content' => $contentStr ,
-					'class' => 'main',
+					'class' => 'left',
 					'order' => 11,
 					'label' => 'Habitat Details',
 			
