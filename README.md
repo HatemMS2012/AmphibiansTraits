@@ -83,7 +83,7 @@ Click the button "Looks good. Proceed with import" and that is all.
 
 ###Example: Importing Measurements Separatly 
 
-You also have the option to import measurement separately. To do this proceed in the same way as above, however, instead of selecting the taxonomic identity tab, select the tab corresponding to the measurement you want to add. Note that you can only import measurements to already exsiting taxonomic identities. 
+You also have the option to import measurement separately. To do this proceed in the same way as above and select the tab corresponding to data you want to import. Note that you can only import measurements to already exsiting taxonomic identities. 
 Sample CSV files for single measurements are porvided here: [Example directory](Examples/traitsExamples/IndividualMeasurements). To import this files, ensure that "taxonomic identity" is imported first.
 
 
