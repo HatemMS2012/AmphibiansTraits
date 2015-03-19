@@ -62,10 +62,21 @@ However, before starting the import, please ensure that:
 ###Example: Importing Complete Amphibians' Trait Data
 
 We prepared a sample of a valid CSV file that contains complete trait dataset in [Examples/traitsExamples/Sample_Full_Traits.csv](Examples/traitsExamples/Sample_Full_Traits.csv). 
-**Please note** that if you want to import your own CSV file, you have to make sure that your order of the columns corresponds to that the sample file. 
+**Please note** that if you want to import your own CSV file, you have to make sure that the order of the columns in your CSV file matches that the sample file. 
 In the sample file you can notice that ID column is empty. In this case, an ID will be generated automtically as combination of the Genus and the Species columns accordoing to the follwing format: **ID = "Genus_Species"**
 
+To start the import, go to your homepage, click on "Taxnomic Identity" tab and then on "Import Taxnomic Identity" button as seen in the steps 1 and 2, respectively, in the screenshot below:
 
+![Import Full Traits 1](/screenshots/import_full_traits_1.png)
+
+Next, select the input format of the imported file (right now only CSV is supporte) and select the file usinge the browse button (see below):
+![Import Full Traits 2](/screenshots/import_full_traits_2.png)
+
+Click the submit button and once its successful you will be directed to a page like the following below:
+![Import Full Traits 3](/screenshots/import_full_traits_3.png)
+
+
+Click the button "Looks good. Proceed with import" and that is all.
 
 
 
