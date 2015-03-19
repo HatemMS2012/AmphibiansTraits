@@ -51,14 +51,21 @@ A dump of the database structure is provided in the project under [/DBDump](/DBD
 
 ##Use Case: Import of Amphibian Traits in CSV 
 
-The goal of this use case is to show how to import amphibians traits that are stored in CVS file. 
-Before starting the import, please ensure that:
+The goal of this use case is to show how to import amphibians traits that are stored in CVS file. The web application allows the import of a complete trait data, i.e., consisting of taxonomic identify and all other related measurement, as well as, the import of single measurement, e.g., colouration inforamtion (coulouration table in the figure above).
+However, before starting the import, please ensure that:
 + The used CSV delimiter is the **comma**: ","
 + The decimal delimiter is the **point**: "."
 + The coloumn **order** of the imported CSV matches that of the  corresponding table (see the example below).
 + The CSV file have a **header line** 
 
-####Example: Valid CSV File
+
+###Example: Importing Complete Amphibians' Trait Data
+
+We prepared a sample of a valid CSV file that contains complete trait dataset in [Examples/traitsExamples/Sample_Full_Traits.csv](Examples/traitsExamples/Sample_Full_Traits.csv). 
+
+
+
+
 
  
 
