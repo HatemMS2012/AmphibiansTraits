@@ -47,3 +47,16 @@ A dump of the database structure is provided in the project under [/DBDump](/DBD
 + For a read only access use: username "guest" and password "guest"
 + Or register as new user and select your permission (for test purposes the registration is not yet managed properly)
 + Enjoy!!
+
+
+##Use Case: Import of Amphibian Traits in CSV 
+
+The goal of this use case is to show how to import amphibians traits that are stored in CVS file. 
+Before starting the import, please ensure that:
++ The used CSV delimiter is the **comma**: ","
++ The decimal delimiter is the **point**: "."
++ The coloumn **order** of the imported CSV matches that of the  corresponding table (more information later).
+
+
+
+
