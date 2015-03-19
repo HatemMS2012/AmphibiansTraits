@@ -62,6 +62,8 @@ However, before starting the import, please ensure that:
 ###Example: Importing Complete Amphibians' Trait Data
 
 We prepared a sample of a valid CSV file that contains complete trait dataset in [Examples/traitsExamples/Sample_Full_Traits.csv](Examples/traitsExamples/Sample_Full_Traits.csv). 
+**Please note** that if you want to import your own CSV file, you have to make sure that your order of the columns corresponds to that the sample file. 
+In the sample file you can notice that ID column is empty. In this case, an ID will be generated automtically as combination of the Genus and the Species columns accordoing to the follwing format: **ID = "Genus_Species"**
 
 
 
