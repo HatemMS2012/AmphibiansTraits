@@ -61,7 +61,7 @@ However, before starting the import, please ensure that:
 
 ###Example: Importing Complete Amphibians' Trait Data
 
-We prepared a sample of a valid CSV file that contains complete trait dataset in [Examples/traitsExamples/Sample_Full_Traits.csv](Examples/traitsExamples/Sample_Full_Traits.csv). 
+We prepared a sample of a valid CSV file that contains complete trait dataset in [Sample_Full_Traits.csv](Examples/traitsExamples/FullTraits/Sample_Full_Traits.csv). 
 **Please note** that if you want to import your own CSV file, you have to make sure that the order of the columns in your CSV file matches that the sample file. 
 In the sample file you can notice that the ID column is empty. In this case, an ID will be generated automtically as combination of the Genus and the Species columns accordoing to the follwing format: **ID = "Genus_Species"**
 
@@ -83,8 +83,8 @@ Click the button "Looks good. Proceed with import" and that is all.
 
 ###Example: Importing Measurements Separatly 
 
-You also have the option to import measurement separately. To do this proceed in the same way as above, however, instead of selecting the taxonomic identity tab, select the tab corresponding to the measurement you want to add. Note that you can only import measurements to already exsiting taxonomic identities.
-Sample CSV files for single measurements are porvided here: [Example directory](Examples/traitsExamples).
+You also have the option to import measurement separately. To do this proceed in the same way as above, however, instead of selecting the taxonomic identity tab, select the tab corresponding to the measurement you want to add. Note that you can only import measurements to already exsiting taxonomic identities. 
+Sample CSV files for single measurements are porvided here: [Example directory](Examples/traitsExamples/IndividualMeasurements). To import this files, ensure that "taxonomic identity" is imported first.
 
 
 
