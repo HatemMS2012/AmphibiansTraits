@@ -1,0 +1,12 @@
+id,Order,Family,Genus,Species,Tax_authority,imageurl
+1,Anura,Hylidae,Acris,crepitans,"Baired, 1854",
+10,Anura,Anomocoela,Aerugoamnis,paulus,"Henrici, Báez & Grande, 2013",
+11,Anura,Dendrobatidae,Ameerega,altamazonica,"Twomey & Brown, 2008",
+2,Anura,Arthroleptidae,Cardioglossa,elegans,"Boulenger, 1906",
+3,Anura,Hylidae,Dendropsophus,parviceps,"Boulenger, 1882",
+4,Anura,Mantellidae,Gephyromantis,eiselti,"Guibé, 1975",
+5,Temnospondyli,Plagiosauridae,Gerrothorax,pulcherrimus,"Fraas, 1913",
+6,Anura,Hyperoliidae,Kassi,senegalensis,Duméril & Bibron 1841,
+7,Anura,Rhacophoridae,Kurixalus,appendiculatus,"Günther, 1858",
+8,Anura,Odontophrynidae,Odontophrynus,americanus,Duméril & Bibron 1841,
+9,Anura,Microhylidae,Oreophryne,amiatoi,"Kraus & Allison, 2009",
