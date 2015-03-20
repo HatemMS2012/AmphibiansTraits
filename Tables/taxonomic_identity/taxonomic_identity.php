@@ -973,7 +973,61 @@ function description__id(&$record){
 		
 	}
 	
-	function section__habitatDetails(&$record){
+	
+	
+
+	//Change log section
+	function section__historyDetails(&$record){
+		$noData = 1;
+		$contentStr = array();
+		
+		$relatedRecords = $record->getRelatedRecords('user_tracking');
+		
+		
+		$contentStr = '<table class="record-view-table"> <tbody>';
+		foreach ($relatedRecords as $relatedRecord){
+			
+			
+			$userid= $relatedRecord['userid'];
+			$action=  $relatedRecord['action'];
+			$time = $relatedRecord['time'];
+			//according to a problem with displaying MySQL timestamp i wrote this workaround
+			$index = 0;
+			
+			foreach ($time  as &$value) {
+			
+				if(strval($value) != 'Array' && strval($value) != '0' ){
+					$sttt .= $value . '/';
+					$timeArray[$index] = $value ;
+					$index++;
+				}
+			}
+			
+			$modificationDate = $timeArray[2] . '/' .$timeArray[1] . '/' .$timeArray[0]. ' - ' .$timeArray[4]. ':'.$timeArray[5].':'.$timeArray[6];
+			
+			if(isset($userid)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">'.$action. ' by ' .$userid. ' at ' .$modificationDate. '</th>	<td class="record-view-value"></td></tr>';
+			}
+			
+			
+			}
+			$contentStr .= '</tbody></table>';
+			
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $contentStr ,
+					'class' => 'main',
+					'order' => 20,
+					'label' => 'Change History',
+			
+				);
+		
+	}
+	
+		function section__habitatDetails(&$record){
 		$noData = 1;
 		$contentStr = array();
 		
@@ -1019,11 +1073,24 @@ function description__id(&$record){
 		return '<img src="'.$record->display('imageurl').'"  width="300"></img>';
 	} 
 	
+	
+	
+	
 	//list display
 	function imageurl__renderCell(&$record){
 		return '<img src="'.$record->display('imageurl').'" width="150"/>';
 	}
-
+	
+	/*
+	//for videos use embed
+	function imageurl__htmlValue(&$record){
+		return '<embed  width="300"  height="315" src="'.$record->display('imageurl').'" ></embed>';
+	} 
+	//list display
+	function imageurl__renderCell(&$record){
+		return '<embed  width="200"  src="'.$record->display('imageurl').'" ></embed>';
+	}
+	*/
 	
 
 	function after_action_new($params=array()){
@@ -1040,12 +1107,64 @@ function description__id(&$record){
 			$Genus = $record->strval('Genus');
 			$record->setValue('id',$Species . '_' . $Genus);
 		}
+		
+		
+	}
+	//for user tracking information
+	function trackUser($recordID,$action,$userID){
+		//for user tracking information
+		$user =& Dataface_AuthenticationTool::getInstance()->getLoggedInUser();		
+		$user_tracking	= new Dataface_Record('user_tracking', array());
+			 // We insert the default values for the record.
+			$user_tracking->setValues($defaultValues);  
+			
+			$user_tracking->setValues(
+					array(
+						'userid'=>trim($userID),
+						'taxon_identity_id' => trim($recordID),
+						'action'=> $action,
+						)
+				);
+			$user_tracking->save();
+	
 	}
 	
-	function id__default(){
+	function afterInsert(&$record){
+		$user =& Dataface_AuthenticationTool::getInstance()->getLoggedInUser();
+		$this->trackUser($record->strval('id'),'INSERT',$user->val('UserName'));
+	}
+		
+	//for user tracking information
+	function afterUpdate(&$record){
+		$user =& Dataface_AuthenticationTool::getInstance()->getLoggedInUser();
+		$this->trackUser($record->strval('id'),'UPDATE',$user->val('UserName'));
+	}
+	
+	//for user tracking information
+	function afterDelete(&$record){
+		$user =& Dataface_AuthenticationTool::getInstance()->getLoggedInUser();
+		$this->trackUser($record->strval('id'),'DELETE',$user->val('UserName'));
+	}
+	
+	
+	
+	
+	/*
+	//for user tracking information	
+	function useraction__permissions($record){
+		return Dataface_PermissionsTool::NO_ACCESS();
+	}
+	
+	function userid__permissions($record){
+		return Dataface_PermissionsTool::NO_ACCESS();
+	}
+	*/
+	
+	
+	
+	function id__default(){ 
 		return 'will be automatically generated';
 	}
-	
 	
 	function id__permissions($record){
 		//$perms = Dataface_PermissionsTool::NO_ACCESS();

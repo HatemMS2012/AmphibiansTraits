@@ -19,18 +19,8 @@ class conf_ApplicationDelegate {
              // if the user is null then nobody is logged in... no access.
              // This will force a login prompt.
          $role = $user->val('Role');
-		 if (  $role == 'ADMIN' ){
-		   return Dataface_PermissionsTool::ALL();
-		 }
-		 if (  $role == 'READ ONLY' ){
-		   return Dataface_PermissionsTool::READ_ONLY();
-		 }
-		 if (  $role == 'Test' ){
-		   return Dataface_PermissionsTool::getRolePermissions('Test');
-		 }
-		 
-         return Dataface_PermissionsTool::getRolePermissions($role);
-             // Returns all of the permissions for the user's current role.
+		return Dataface_PermissionsTool::getRolePermissions($role);
+        
       }
 	  
 	/*  

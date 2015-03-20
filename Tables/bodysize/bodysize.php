@@ -1,6 +1,40 @@
 <?php
 class tables_bodysize {
 
+
+
+//for user tracking information
+	function trackUser($recordID,$action,$userID){
+		//for user tracking information
+		$user =& Dataface_AuthenticationTool::getInstance()->getLoggedInUser();		
+		$record	= new Dataface_Record('user_tracking', array());
+			 // We insert the default values for the record.
+			$record->setValues($defaultValues);  
+			
+			$record->setValues(
+					array(
+						'userid'=>trim($userID),
+						'bodysize_id' => trim($recordID),
+						'action'=> $action,
+						)
+				);
+			$record->save();
+	
+	}
+	
+	function afterInsert(&$record){
+		$user =& Dataface_AuthenticationTool::getInstance()->getLoggedInUser();
+		$this->trackUser($record->strval('id'),'INSERT',$user->val('UserName'));
+	}
+		
+	//for user tracking information
+	function afterUpdate(&$record){
+		$user =& Dataface_AuthenticationTool::getInstance()->getLoggedInUser();
+		$this->trackUser($record->strval('id'),'UPDATE',$user->val('UserName'));
+	}
+	
+	
+	
 function __import__csv(&$data, $defaultValues=array()){
    
 	$SEP = ',';
