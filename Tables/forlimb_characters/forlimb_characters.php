@@ -6,7 +6,7 @@ class tables_forlimb_characters {
 		$user =& Dataface_AuthenticationTool::getInstance()->getLoggedInUser();		
 		$user_tracking	= new Dataface_Record('user_tracking', array());
 			 // We insert the default values for the record.
-			$user_tracking->setValues($defaultValues);  
+			//$user_tracking->setValues($defaultValues);  
 			
 			$user_tracking->setValues(
 					array(

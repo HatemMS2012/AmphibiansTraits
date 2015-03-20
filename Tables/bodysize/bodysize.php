@@ -9,7 +9,7 @@ class tables_bodysize {
 		$user =& Dataface_AuthenticationTool::getInstance()->getLoggedInUser();		
 		$record	= new Dataface_Record('user_tracking', array());
 			 // We insert the default values for the record.
-			$record->setValues($defaultValues);  
+			 //$record->setValues($defaultValues);  
 			
 			$record->setValues(
 					array(
