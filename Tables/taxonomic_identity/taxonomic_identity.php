@@ -1,7 +1,8 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 mysql_set_charset ('utf-8');
-
+import('Dataface/SkinTool.php');
+import('Dataface/RecordGrid.php');
 
 class tables_taxonomic_identity {
 
@@ -21,6 +22,9 @@ function description__id(&$record){
 }
 
 */		
+
+
+
 	
 	//relationships details view
 	function section__colorDetails(&$record){

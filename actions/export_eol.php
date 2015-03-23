@@ -1,14 +1,6 @@
-<html>
-
-<header>
-<title> EOL Export Results </title>
-<h1> EOL Export Results </h1>
-</header>
-
-
-
-
 <?php
+import('Dataface/SkinTool.php');
+import('Dataface/RecordGrid.php');
 
 class actions_export_eol  {
         
@@ -895,7 +887,7 @@ class actions_export_eol  {
 		
 		//generate meta.xml file: now it is a static file stored in /eol/meta/... please check it
 		copy('eol/meta/meta.xml', 'EXPORTS/meta.xml');
-		echo 'Successfully exported <a href="EXPORTS/meta.xml"> meta.xml</a>   <br>';
+		
 		
 			
 		
@@ -909,15 +901,30 @@ class actions_export_eol  {
 		//if true, good; if false, zip creation failed
 		$result = $this->create_zip($files_to_zip,'EXPORTS/eol-export.zip');
 	
+		
+		$resultDisplay = '<h1> Successful EOL Export </h1><p>'.
+						 '<h3> You can view and download the exported file below  </h3> (for more info see <a href = "http://eol.org/info/522" target = "blank"> Structured Data Darwin Core Archives)</a><p>'.
+						 'Meta Data: <a href="EXPORTS/meta.xml"> meta.xml</a>   <br>'.
+						 'Taxa: <a href="EXPORTS/taxa.txt"> taxa.txt </a> <br>'.
+						 'References: <a href="EXPORTS/references.txt"> references.txt </a>  <br>'.
+						 'Occurrences <a href="EXPORTS/occurrences.txt"> occurrences.txt </a> <br>'.
+						 'Measurements or facts: <a href="EXPORTS/measurements or facts.txt"> measurements or facts.txt </a>   <br>'.
+						 '<b>For archive download click <a href="EXPORTS/eol-export.zip">here</a><b> <br>';
+						 
+		
 
-		echo '<body>';
-		echo 'Successfully exported to <a href="EXPORTS/taxa.txt"> taxa.txt </a> <br>';
-		echo 'Successfully exported to <a href="EXPORTS/references.txt"> references.txt </a>  <br>';
-		echo 'Successfully exported to  <a href="EXPORTS/occurrences.txt"> occurrences.txt </a> <br>';
-		echo 'Successfully exported to <a href="EXPORTS/measurements or facts.txt"> measurements or facts.txt </a>   <br>';
-		echo 'You can download the archive <a href="EXPORTS/eol-export.zip">here</a> <br>';
-		echo '</body>';
-		echo '</html>';
+		//$grid = new Dataface_RecordGrid($record1);
+
+		df_display(array('body'=>$resultDisplay), 'Dataface_Main_Template.html');
+	
+		/*
+		$url = $app->url('-action=list');   // A default URL in case no redirect was supplied
+        if ( @$_POST['--redirect'] ) $url = base64_decode($_POST['--redirect']);
+        $url .= '&--msg='.urlencode('EOL export successful! You can download the archive <a href="EXPORTS/eol-export.zip">here</a> <br>');
+        // Redirect back to the previous page
+        header('Location: '.$url);
+        exit;
+		*/
     }
 	
 		/* creates a compressed zip file */
