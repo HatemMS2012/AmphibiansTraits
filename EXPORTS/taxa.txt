@@ -1,0 +1,12 @@
+Identifier	ScientificName	ParentTaxonID	Kingdom	Phylum	Class	Order	Family	Genus	TaxonRank	FurtherInformation	TaxonicStatus	NamePublishedIn	ReferenceID	TaxonRemarks
+Acris_crepitans	crepitans					Anura	Hylidae	Acris					"Baired, 1854"	
+Aerugoamnis_paulus	paulus					Anura	Anomocoela	Aerugoamnis					"Henrici, Báez & Grande, 2013"	
+Ameerega_altamazonica	altamazonica					Anura	Dendrobatidae	Ameerega					"Twomey & Brown, 2008"	
+Cardioglossa_elegans	elegans					Anura	Arthroleptidae	Cardioglossa					"Boulenger, 1906"	
+Dendropsophus_parviceps	parviceps					Anura	Hylidae	Dendropsophus					"Boulenger, 1882"	
+Gephyromantis_eiselti	eiselti					Anura	Mantellidae	Gephyromantis					"Guibé, 1975"	
+Gerrothorax_pulcherrimus	pulcherrimus					Temnospondyli	Plagiosauridae	Gerrothorax					"Fraas, 1913"	
+Kassi_senegalensis	senegalensis					Anura	Hyperoliidae	Kassi					"Duméril & Bibron 1841"	
+Kurixalus_appendiculatus	appendiculatus					Anura	Rhacophoridae	Kurixalus					"Günther, 1858"	
+Odontophrynus_americanus	americanus					Anura	Odontophrynidae	Odontophrynus					"Duméril & Bibron 1841"	
+Oreophryne_amiatoi	amiatoi					Anura	Microhylidae	Oreophryne					"Kraus & Allison, 2009"	
