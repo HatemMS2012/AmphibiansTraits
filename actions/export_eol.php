@@ -909,7 +909,8 @@ class actions_export_eol  {
 						 'References: <a href="EXPORTS/references.txt"> references.txt </a>  <br>'.
 						 'Occurrences <a href="EXPORTS/occurrences.txt"> occurrences.txt </a> <br>'.
 						 'Measurements or facts: <a href="EXPORTS/measurements or facts.txt"> measurements or facts.txt </a>   <br>'.
-						 '<b>For archive download click <a href="EXPORTS/eol-export.zip">here</a><b> <br>';
+						 '<b>For archive download click <a href="EXPORTS/eol-export.zip">here</a><b> <br> <p>'.
+						 '<img  src="images/EOL_DwC_Archiev.png"/><p>';
 						 
 		
 
