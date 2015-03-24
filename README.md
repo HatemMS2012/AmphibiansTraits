@@ -9,7 +9,7 @@ In general, biologists store trait data in spreadsheets (e.g. Excel) in non-stan
 ##The Data Model
 A full [specification](/Model/Trait_data_base_amphibians_v2.xlsx) of the spreadsheet used at MFN-Berlin for storing amphibians' trait data was obtained. After analyzing the specification, we develped a relation data model for amphibians' traits data. At the heart of the model is the "taxonomic_identity entity", which describes a given taxon. Each "taxonomic_identity" is described by set of measurements such as body size, head characteristics and so on (see the figure below). 
 
-![Relational Model](/Model/AmphibiansERD.png)
+![Relational Model](/Model/AmphibiansERD_v2.png)
 
 The data model was implemented using MySQL.
 
@@ -22,7 +22,7 @@ The frontend provides the following functionalities:
 + User registration and rights management
 + Data import from CSV files
 + Data export as CSV, EXCEL and XML
-+ Data exprot to Encyclopedia of Life (EOL) as [Structured Data Darwin Core Archives](http://eol.org/info/522)
++ Data exprot to Encyclopedia of Life (EOL) as [Structured Data Darwin Core Archives](http://eol.org/info/522) (right now only for colouration, body size, and Forelimb measurements).
 + User tracking
 + Report generation tool using [ckeditor](http://ckeditor.com/)
 
@@ -62,6 +62,7 @@ However, before starting the import, please ensure that:
 
 
 ###Example: Importing Complete Amphibians' Trait Data
+**Does not work with the new model**
 
 We prepared a sample of a valid CSV file that contains complete trait dataset in [Sample_Full_Traits.csv](Examples/traitsExamples/FullTraits/Sample_Full_Traits.csv). 
 **Please note** that if you want to import your own CSV file, you have to make sure that the order of the columns in your CSV file matches that the sample file. 
