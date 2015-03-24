@@ -22,6 +22,8 @@ The frontend provides the following functionalities:
 + User registration and rights management
 + Data import from CSV files
 + Data export as CSV, EXCEL and XML
++ Data exprot to Encyclopedia of Life (EOL) as [Structured Data Darwin Core Archives](http://eol.org/info/522)
++ User tracking
 + Report generation tool using [ckeditor](http://ckeditor.com/)
 
 
