@@ -62,7 +62,7 @@ However, before starting the import, please ensure that:
 
 
 ###Example: Importing Complete Amphibians' Trait Data
-**Does not work with the new model**
+**NOTE: Does not work with the new model**
 
 We prepared a sample of a valid CSV file that contains complete trait dataset in [Sample_Full_Traits.csv](Examples/traitsExamples/FullTraits/Sample_Full_Traits.csv). 
 **Please note** that if you want to import your own CSV file, you have to make sure that the order of the columns in your CSV file matches that the sample file. 
@@ -85,7 +85,7 @@ Click the button "Looks good. Proceed with import" and that is all.
 
 
 ###Example: Importing Measurements Separatly 
-
+**NOTE: This works with the new data model**
 You also have the option to import measurement separately. To do this proceed in the same way as above and select the tab corresponding to data you want to import. Note that you can only import measurements to already exsiting taxonomic identities. 
 Sample CSV files for single measurements are porvided here: [Example directory](Examples/traitsExamples/IndividualMeasurements). To import this files, ensure that "taxonomic identity" is imported first.
 
