@@ -56,9 +56,41 @@ function __import__csv(&$data, $defaultValues=array()){
 		}
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
-        list($Id, $femur_length_min,$femur_length_max,$tibia_shank_length,$foot_length,$total_foot_length,$first_toe_length,$second_toe_length,
-			$third_toe_length,$fourth_toe_length,$fifth_toe_length,$webbing_on_toe,$dermal_fringe_along_toe,$lateral_dermal_fringe_on_toe,
-			$supernumerary_tubercle_on_toes,$inner_metatarsal_tubercle,$outer_metatarsal_tubercle) = str_getcsv($row, $SEP,'"') ; //  explode(';', $row);
+        list($id
+				,$min_femur_length
+				,$max_femur_length
+				,$mean_femur_length
+				,$min_tibia_shank_length
+				,$max_tibia_shank_length
+				,$mean_tibia_shank_length
+				,$min_foot_length
+				,$max_foot_length
+				,$mean_foot_length
+				,$min_total_foot_length
+				,$max_total_foot_length
+				,$medium_total_foot_length
+				,$min_first_toe_length
+				,$max_first_toe_length
+				,$mean_first_toe_length
+				,$min_second_toe_length
+				,$max_second_toe_length
+				,$mean_second_toe_length
+				,$min_third_toe_length
+				,$max_third_toe_length
+				,$mean_third_toe_length
+				,$min_fourth_toe_length
+				,$max_fourth_toe_length
+				,$mean_fourth_toe_length
+				,$min_fifth_toe_length
+				,$max_fifth_toe_length
+				,$mean_fifth_toe_length
+				,$webbing_on_toe
+				,$dermal_fringe_along_toe
+				,$lateral_dermal_fringe_on_toe
+				,$supernumerary_tubercle_on_toes
+				,$inner_metatarsal_tubercle
+				,$outer_metatarsal_tubercle
+				) = str_getcsv($row, $SEP,'"') ; //  explode(';', $row);
         
 		$hindlimb_characters	= new Dataface_Record('hindlimb_characters', array());
          // We insert the default values for the record.
@@ -66,23 +98,40 @@ function __import__csv(&$data, $defaultValues=array()){
 		
 		$hindlimb_characters->setValues(
 				array(
-					'id'=>trim($Id),
-					'femur_length_min'=>trim($femur_length_min),
-					'femur_length_max'=>trim($femur_length_max),
-					'tibia_shank_length'=>trim($tibia_shank_length),
-					'foot_length'=>trim($foot_length),
-					'total_foot_length'=>trim($total_foot_length),
-					'first_toe_length'=>trim($first_toe_length),
-					'second_toe_length'=>trim($second_toe_length),
-					'third_toe_length'=>trim($third_toe_length),
-					'fourth_toe_length'=>trim($fourth_toe_length),
-					'fifth_toe_length'=>trim($fifth_toe_length),
-					'webbing_on_toe'=>trim($webbing_on_toe),
-					'dermal_fringe_along_toe'=>trim($dermal_fringe_along_toe),
-					'lateral_dermal_fringe_on_toe'=>trim($lateral_dermal_fringe_on_toe),
-					'supernumerary_tubercle_on_toes'=>trim($supernumerary_tubercle_on_toes),
-					'inner_metatarsal_tubercle'=>trim($inner_metatarsal_tubercle),
-					'outer_metatarsal_tubercle'=>trim($outer_metatarsal_tubercle)
+					 'id'=>trim($id),
+					 'min_femur_length'=>trim($min_femur_length),
+					 'max_femur_length'=>trim($max_femur_length),
+					 'mean_femur_length'=>trim($mean_femur_length),
+					 'min_tibia_shank_length'=>trim($min_tibia_shank_length),
+					 'max_tibia_shank_length'=>trim($max_tibia_shank_length),
+					 'mean_tibia_shank_length'=>trim($mean_tibia_shank_length),
+					 'min_foot_length'=>trim($min_foot_length),
+					 'max_foot_length'=>trim($max_foot_length),
+					 'mean_foot_length'=>trim($mean_foot_length),
+					 'min_total_foot_length'=>trim($min_total_foot_length),
+					 'max_total_foot_length'=>trim($max_total_foot_length),
+					 'medium_total_foot_length'=>trim($medium_total_foot_length),
+					 'min_first_toe_length'=>trim($min_first_toe_length),
+					 'max_first_toe_length'=>trim($max_first_toe_length),
+					 'mean_first_toe_length'=>trim($mean_first_toe_length),
+					 'min_second_toe_length'=>trim($min_second_toe_length),
+					 'max_second_toe_length'=>trim($max_second_toe_length),
+					 'mean_second_toe_length'=>trim($mean_second_toe_length),
+					 'min_third_toe_length'=>trim($min_third_toe_length),
+					 'max_third_toe_length'=>trim($max_third_toe_length),
+					 'mean_third_toe_length'=>trim($mean_third_toe_length),
+					 'min_fourth_toe_length'=>trim($min_fourth_toe_length),
+					 'max_fourth_toe_length'=>trim($max_fourth_toe_length),
+					 'mean_fourth_toe_length'=>trim($mean_fourth_toe_length),
+					 'min_fifth_toe_length'=>trim($min_fifth_toe_length),
+					 'max_fifth_toe_length'=>trim($max_fifth_toe_length),
+					 'mean_fifth_toe_length'=>trim($mean_fifth_toe_length),
+					 'webbing_on_toe'=>trim($webbing_on_toe),
+					 'dermal_fringe_along_toe'=>trim($dermal_fringe_along_toe),
+					 'lateral_dermal_fringe_on_toe'=>trim($lateral_dermal_fringe_on_toe),
+					 'supernumerary_tubercle_on_toes'=>trim($supernumerary_tubercle_on_toes),
+					 'inner_metatarsal_tubercle'=>trim($inner_metatarsal_tubercle),
+					 'outer_metatarsal_tubercle'=>trim($outer_metatarsal_tubercle)
 					)
 			);
 		$hindlimb_characters->save();

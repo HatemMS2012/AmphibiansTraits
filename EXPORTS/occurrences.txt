@@ -1,12 +1,12 @@
 OccurrenceID	TaxonID	Sex	LifeStage	Reproductive	Behaviour	Establishment	Remarks	CountOfIndividuals	Preparations	FieldNotes	SamplingProtocol	SamplingEffort	DecimalLatitude	DecimalLongitude	Locality	IdentifiedBy	DateIdentified	EventDate	EventID
-Acris_crepitans	Acris_crepitans														"North America"				
-Aerugoamnis_paulus	Aerugoamnis_paulus														"North America"				
-Ameerega_altamazonica	Ameerega_altamazonica														"South America"				
-Cardioglossa_elegans	Cardioglossa_elegans														Africa				
-Dendropsophus_parviceps	Dendropsophus_parviceps														America				
-Gephyromantis_eiselti	Gephyromantis_eiselti														Madagascar				
-Gerrothorax_pulcherrimus	Gerrothorax_pulcherrimus														Europe				
-Kassi_senegalensis	Kassi_senegalensis														Africa				
-Kurixalus_appendiculatus	Kurixalus_appendiculatus														"South east Asia"				
-Odontophrynus_americanus	Odontophrynus_americanus														"South America"				
-Oreophryne_amiatoi	Oreophryne_amiatoi														"South east Asia"				
+1	1														Africa				
+10	10														"South east Asia"				
+11	11														Africa				
+2	2														America				
+3	3														Europe				
+4	4														"North America"				
+5	5														"North America"				
+6	6														"South east Asia"				
+7	7														"South America"				
+8	8														"South America"				
+9	9														Madagascar				

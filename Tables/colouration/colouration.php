@@ -60,7 +60,7 @@ function __import__csv(&$data, $defaultValues=array()){
 		}
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
-        list($Id, $Pattern,$Colour, $Warty, $Uni_vs_polymorph) = str_getcsv($row, $SEP,'"') ; //explode(';', $row);
+        list($Id, $Pattern,$Colour, $Warty, $Uni_vs_polymorph,$sex_colour_dimorphism) = str_getcsv($row, $SEP,'"') ; //explode(';', $row);
         
 		$coloration = new Dataface_Record('colouration', array());
          // We insert the default values for the record.
@@ -73,7 +73,8 @@ function __import__csv(&$data, $defaultValues=array()){
                 'pattern'=>trim($Pattern),
 				'colour'=>trim($Colour),
 				'warty'=>trim($Warty),
-			    'uni_vs_polymorph'=>trim($Uni_vs_polymorph)
+			    'uni_vs_polymorph'=>trim($Uni_vs_polymorph),
+				'sex_colour_dimorphism' =>trim($sex_colour_dimorphism)
 				
                  )
             );	

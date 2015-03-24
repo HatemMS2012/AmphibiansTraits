@@ -39,32 +39,58 @@ class actions_export_eol  {
 	   fputcsv($fp,array('Identifier','ScientificName','ParentTaxonID','Kingdom','Phylum','Class','Order','Family','Genus','TaxonRank','FurtherInformation',
 						 'TaxonicStatus','NamePublishedIn','ReferenceID','TaxonRemarks'),"\t");
 						 
-		//Export references 
-		//`ReferenceID`, `PublicationType`, `FullReference`, `PrimaryTitle`, `SecondaryTitle`, 
-		//`Pages`, `PageStart`, `PageEnd`, `Volume`, `Edition`, `AuthorList`, `DateCreated`, 
-		//`Language`, `URL`, `DOI`, `LocalityOfPublisher`, `referencecol`, `EditorList`
-		$fpRef = fopen('EXPORTS/references.txt', 'w');
-		fputcsv($fpRef,array('ReferenceID', 'PublicationType', 'FullReference', 'PrimaryTitle', 'SecondaryTitle','Pages', 
-						  'PageStart', 'PageEnd', 'Volume', 'Edition', 'AuthorList', 'DateCreated', 
-						   'Language', 'URL', 'DOI', 'LocalityOfPublisher', 'EditorList'),"\t");				 
+		
 	   
 	   
 	   while($row = mysql_fetch_assoc($result)){
 		 	
 
-			$fields=array($row['id'], $row['Species'],'','','','',$row['Order'], $row['Family'],$row['Genus'],'','','','',$row['Tax_authority'],'');
+			$fields=array($row['id'], $row['Species'],'','','','',$row['Order'], $row['Family'],$row['Genus'],'','','','',$row['referenceID'],'');
 		
 			fputcsv($fp, $fields,"\t");
 			
-			$fieldsRef=array($row['Tax_authority'], '', $row['Tax_authority'], '', '','', 
-						     '', '', '', '', '', '', 
-						     '', '', '', '', '');
 		
-			fputcsv($fpRef, $fieldsRef,"\t");
-			
-			
 		}
 		fclose($fp);
+		
+		
+		//Export references 
+		//`ReferenceID`, `PublicationType`, `FullReference`, `PrimaryTitle`, `SecondaryTitle`, 
+		//`Pages`, `PageStart`, `PageEnd`, `Volume`, `Edition`, `AuthorList`, `DateCreated`, 
+		//`Language`, `URL`, `DOI`, `LocalityOfPublisher`, `referencecol`, `EditorList`
+		
+		$result = mysql_query("select * from reference");
+		 
+		 
+		$fpRef = fopen('EXPORTS/references.txt', 'w');
+		
+		fputcsv($fpRef,array('ReferenceID', 'PublicationType', 'FullReference', 'PrimaryTitle', 'SecondaryTitle','Pages', 
+						  'PageStart', 'PageEnd', 'Volume', 'Edition', 'AuthorList', 'DateCreated', 
+						   'Language', 'URL', 'DOI', 'LocalityOfPublisher', 'EditorList'),"\t");				 
+						   
+		   while($row = mysql_fetch_assoc($result)){				   
+						   
+						   	$fieldsRef=array($row['referenceID'],
+													$row['PublicationType'],
+													$row['FullReference'],
+													$row['PrimaryTitle'],
+													$row['SecondaryTitle'],
+													$row['Pages'],
+													$row['PageStart'],
+													$row['PageEnd'],
+													$row['Volume'],
+													$row['Edition'],
+													$row['AuthorList'],
+													$row['DateCreated'],
+													$row['Language'],
+													$row['URL'],
+													$row['DOI'],
+													$row['LocalityOfPublisher'],
+													$row['EditorList']);
+							 	
+							fputcsv($fpRef, $fieldsRef,"\t");
+			}
+						   
 		fclose($fpRef);
 		
 		
@@ -175,7 +201,8 @@ class actions_export_eol  {
 			$colour = $row['colour'];
 			$warty = $row['warty'];
 			$uni_vs_polymorph = $row['uni_vs_polymorph'];
-			
+			$sex_colour_dimorphism = $row['sex_colour_dimorphism'];
+		
 			if($pattern!=null){
 				$record1 = array($measurementID, $id, 'yes', "", "", "colouration: pattern", $pattern, "", "", "", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
@@ -197,6 +224,12 @@ class actions_export_eol  {
 				$measurementID ++;
 			}
 			
+			if($sex_colour_dimorphism!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "colouration: sex colour dimorphism", $sex_colour_dimorphism, "", "", "", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			
 		}
 		
 		//Forelimb characteristics 
@@ -208,100 +241,183 @@ class actions_export_eol  {
 		$result = mysql_query("select * from forlimb_characters");
 		
 		while($row = mysql_fetch_assoc($result)){
-			$id = $row['id'];
-			$forelimb_length = $row['forelimb_length'];
-			$humerus_length_min = $row['humerus_length_min'];
-			$humerus_length_max = $row['humerus_length_max'];
-			$hand_length = $row['hand_length'];
-			$first_finger_length = $row['first_finger_length'];
-			$second_finger_length = $row['second_finger_length'];
-			$third_finger_length = $row['third_finger_length'];
-			$forth_finger_length = $row['forth_finger_length'];
-			$finger_disk = $row['finger_disk'];
-			$dermal_fringe_along_finger = $row['dermal_fringe_along_finger'];
-			$lateral_dermal_fringe_on_finger = $row['lateral_dermal_fringe_on_finger'];
-			$webbing_on_finger = $row['webbing_on_finger'];
-			$inner_palmar_tubercle = $row['inner_palmar_tubercle'];
-			$outer_plmar_tubercle = $row['outer_plmar_tubercle'];
-			$supernumerary_tubercle_on_finger = $row['supernumerary_tubercle_on_finger'];
+					$id=$row['id'];
+					$min_forelimb_length=$row['min_forelimb_length'];
+					$max_forelimb_length=$row['max_forelimb_length'];
+					$mean_forelimb_length=$row['mean_forelimb_length'];
+					$min_humerus_length=$row['min_humerus_length'];
+					$max_humerus_length=$row['max_humerus_length'];
+					$mean_humerus_length=$row['mean_humerus_length'];
+					$min_hand_length=$row['min_hand_length'];
+					$max_hand_length=$row['max_hand_length'];
+					$mean_hand_length=$row['mean_hand_length'];
+					$min_first_finger_length=$row['min_first_finger_length'];
+					$max_first_finger_length=$row['max_first_finger_length'];
+					$mean_first_finger_length=$row['mean_first_finger_length'];
+					$min_second_finger_length=$row['min_second_finger_length'];
+					$max_second_finger_length=$row['max_second_finger_length'];
+					$mean_second_finger_length=$row['mean_second_finger_length'];
+					$min_third_finger_length=$row['min_third_finger_length'];
+					$max_third_finger_length=$row['max_third_finger_length'];
+					$mean_third_finger_length=$row['mean_third_finger_length'];
+					$min_forth_finger_length=$row['min_forth_finger_length'];
+					$max_forth_finger_length=$row['max_forth_finger_length'];
+					$mean_forth_finger_length=$row['mean_forth_finger_length'];
+					
+					$finger_disk=$row['finger_disk'];
+					$dermal_fringe_along_finger=$row['dermal_fringe_along_finger'];
+					$lateral_dermal_fringe_on_finger=$row['lateral_dermal_fringe_on_finger'];
+					$webbing_on_finger=$row['webbing_on_finger'];
+					$inner_palmar_tubercle=$row['inner_palmar_tubercle'];
+					$outer_plmar_tubercle=$row['outer_plmar_tubercle'];
+					$supernumerary_tubercle_on_finger=$row['supernumerary_tubercle_on_finger'];
+
 			
-			if($forelimb_length!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Forelimb length", $forelimb_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "", "", "", "", "", "", "", "", "");
+			if($min_forelimb_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "forelimb_length", $min_forelimb_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001113.rdf", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
-			if($humerus_length_min!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Humerus length", $humerus_length_min, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001113.rdf", "", "", "", "", "", "", "", "");
+			if($max_forelimb_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "forelimb_length", $max_forelimb_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001114.rdf", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
-			if($humerus_length_max!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Humerus length", $humerus_length_max, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001114.rdf", "", "", "", "", "", "", "", "");
+			if($mean_forelimb_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "forelimb_length", $mean_forelimb_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001109.rdf", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
-			if($hand_length!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Hand length", $hand_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "", "", "", "", "", "", "", "", "");
+			if($min_humerus_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "humerus_length", $min_humerus_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001113.rdf", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
-			if($first_finger_length!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "First finger length", $first_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "", "", "", "", "", "", "", "", "");
+			if($max_humerus_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "humerus_length", $max_humerus_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001114.rdf", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
-			if($second_finger_length!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Second finger length", $second_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "", "", "", "", "", "", "", "", "");
+			if($mean_humerus_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "humerus_length", $mean_humerus_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001109.rdf", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
-			if($third_finger_length!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Third finger length", $third_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "", "", "", "", "", "", "", "", "");
+			if($min_hand_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "hand_length", $min_hand_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001113.rdf", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
-			if($forth_finger_length!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Fourth finger length", $forth_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "", "", "", "", "", "", "", "", "");
+			if($max_hand_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "hand_length", $max_hand_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001114.rdf", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
+			if($mean_hand_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "hand_length", $mean_hand_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001109.rdf", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			if($min_first_finger_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "first_finger_length", $min_first_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001113.rdf", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			if($max_first_finger_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "first_finger_length", $max_first_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001114.rdf", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			if($mean_first_finger_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "first_finger_length", $mean_first_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001109.rdf", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			if($min_second_finger_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "second_finger_length", $min_second_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			if($max_second_finger_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "second_finger_length", $max_second_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001114.rdf", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			if($mean_second_finger_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "second_finger_length", $mean_second_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001109.rdf", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			if($min_third_finger_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "third_finger_length", $min_third_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001113.rdf", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			if($max_third_finger_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "third_finger_length", $max_third_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001114.rdf", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			if($mean_third_finger_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "third_finger_length", $mean_third_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001109.rdf", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			if($min_forth_finger_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "forth_finger_length", $min_forth_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001113.rdf", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			if($max_forth_finger_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "forth_finger_length", $max_forth_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001114.rdf", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			if($mean_forth_finger_length!=null){
+				$record1 = array($measurementID, $id, 'yes', "", "", "forth_finger_length", $mean_forth_finger_length, "http://purl.obolibrary.org/obo/UO_0000016", "", "http://semanticscience.org/resource/SIO_001109.rdf", "", "", "", "", "", "", "", "");
+				fputcsv($fp, $record1,"\t");
+				$measurementID ++;
+			}
+			
+			
 			if($finger_disk!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Finger disk", $finger_disk, "", "", "", "", "", "", "", "", "", "", "");
+				$record1 = array($measurementID, $id, 'yes', "", "", "finger_disk", $finger_disk, "http://purl.obolibrary.org/obo/UO_0000016", "", "", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
-			if($dermal_fringe_along_finger!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Dermal fringe along finger", $dermal_fringe_along_finger, "", "", "", "", "", "", "", "", "", "", "");
-				fputcsv($fp, $record1,"\t");
-				$measurementID ++;
-			}
+			
 			if($lateral_dermal_fringe_on_finger!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Lateral dermal fringe on finger", $lateral_dermal_fringe_on_finger, "", "", "", "", "", "", "", "", "", "", "");
+				$record1 = array($measurementID, $id, 'yes', "", "", "lateral_dermal_fringe_on_finger", $lateral_dermal_fringe_on_finger, "", "", "", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
+			
 			if($webbing_on_finger!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Webbing on finger", $webbing_on_finger, "", "", "", "", "", "", "", "", "", "", "");
+				$record1 = array($measurementID, $id, 'yes', "", "", "webbing_on_finger", $webbing_on_finger, "", "", "", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
+			
 			if($inner_palmar_tubercle!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Inner palmar tubercle", $inner_palmar_tubercle, "", "", "", "", "", "", "", "", "", "", "");
+				$record1 = array($measurementID, $id, 'yes', "", "", "inner_palmar_tubercle", $inner_palmar_tubercle, "", "", "", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
+			
 			if($outer_plmar_tubercle!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Outer palmar tubercle", $outer_plmar_tubercle, "", "", "", "", "", "", "", "", "", "", "");
+				$record1 = array($measurementID, $id, 'yes', "", "", "outer_plmar_tubercle", $outer_plmar_tubercle, "", "", "", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
+			
 			if($supernumerary_tubercle_on_finger!=null){
-				$record1 = array($measurementID, $id, 'yes', "", "", "Supernumerary tubercle on finger", $supernumerary_tubercle_on_finger, "", "", "", "", "", "", "", "", "", "", "");
+				$record1 = array($measurementID, $id, 'yes', "", "", "supernumerary_tubercle_on_finger", $supernumerary_tubercle_on_finger, "", "", "", "", "", "", "", "", "", "", "");
 				fputcsv($fp, $record1,"\t");
 				$measurementID ++;
 			}
 		}
 		
+		/*
 		
 		//Hindlimb characteristics 
 		//`femur_length_min`, `femur_length_max`, `tibia_shank_length`, `foot_length`, `total_foot_length`, 
@@ -880,7 +996,7 @@ class actions_export_eol  {
 				$measurementID ++;
 			}
 		}
-		
+		*/
 		fclose($fp);
 	
 		
@@ -903,7 +1019,7 @@ class actions_export_eol  {
 	
 		
 		$resultDisplay = '<h1> Successful EOL Export </h1><p>'.
-						 '<h3> You can view and download the exported file below  </h3> (for more info see <a href = "http://eol.org/info/522" target = "blank"> Structured Data Darwin Core Archives)</a><p>'.
+						 '<h3> You can view and download the exported files below  </h3> (for more info see <a href = "http://eol.org/info/522" target = "blank"> Structured Data Darwin Core Archives)</a><p>'.
 						 'Meta Data: <a href="EXPORTS/meta.xml"> meta.xml</a>   <br>'.
 						 'Taxa: <a href="EXPORTS/taxa.txt"> taxa.txt </a> <br>'.
 						 'References: <a href="EXPORTS/references.txt"> references.txt </a>  <br>'.

@@ -1,337 +1,57 @@
 MeasurementID	OccurrenceID	MeasurementOfTaxon	AssociationID	ParentMeasurementID	MeasurementType	MeasurementValue	Unit	Accuracy	StatisticalMethod	DeterminedDate	DeterminedBy	MeasurementMethod	Remarks	Source	Citation	Contributor	ReferenceID
-1	Acris_crepitans	yes			"snout to vent length - male"	35	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-2	Acris_crepitans	yes			"snout to vent length - male"	25.5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
-3	Aerugoamnis_paulus	yes			"snout to vent length - male"	19.3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-4	Aerugoamnis_paulus	yes			"snout to vent length - male"	19.3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-5	Ameerega_altamazonica	yes			"snout to vent length - male"	22.9	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-6	Ameerega_altamazonica	yes			"snout to vent length - male"	20.5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
-7	Cardioglossa_elegans	yes			"snout to vent length - male"	23.9	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-8	Cardioglossa_elegans	yes			"snout to vent length - female"	35.3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-9	Dendropsophus_parviceps	yes			"snout to vent length - male"	18.3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-10	Dendropsophus_parviceps	yes			"snout to vent length - female"	26.1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-11	Gephyromantis_eiselti	yes			"snout to vent length - male"	21.5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-12	Gerrothorax_pulcherrimus	yes			"snout to vent length - male"	1000	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-13	Gerrothorax_pulcherrimus	yes			"snout to vent length - male"	3000	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-14	Kassi_senegalensis	yes			"snout to vent length - male"	32.5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-15	Kassi_senegalensis	yes			"snout to vent length - male"	49	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
-16	Kurixalus_appendiculatus	yes			"snout to vent length - male"	37	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-17	Kurixalus_appendiculatus	yes			"snout to vent length - male"	33.5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
-18	Odontophrynus_americanus	yes			"snout to vent length - male"	45	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-19	Odontophrynus_americanus	yes			"snout to vent length - male"	70	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
-20	Oreophryne_amiatoi	yes			"snout to vent length - male"	25.2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-21	Cardioglossa_elegans	yes			"colouration: pattern"	stripes											
-22	Cardioglossa_elegans	yes			"colouration: colour"	aposematic											
-23	Cardioglossa_elegans	yes			"colouration: warty"	none											
-24	Cardioglossa_elegans	yes			"colouration: uni vs. polymorph"	polymorph											
-25	Dendropsophus_parviceps	yes			"colouration: pattern"	points											
-26	Dendropsophus_parviceps	yes			"colouration: colour"	aposematic											
-27	Dendropsophus_parviceps	yes			"colouration: warty"	none											
-28	Dendropsophus_parviceps	yes			"colouration: uni vs. polymorph"	few											
-29	Aerugoamnis_paulus	yes			"Humerus length"	4	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-30	Aerugoamnis_paulus	yes			"Humerus length"	4	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-31	Cardioglossa_elegans	yes			"Forelimb length"	4.2	http://purl.obolibrary.org/obo/UO_0000016										
-32	Cardioglossa_elegans	yes			"Humerus length"	3.1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-33	Cardioglossa_elegans	yes			"Humerus length"	3.3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-34	Cardioglossa_elegans	yes			"Hand length"	2.2	http://purl.obolibrary.org/obo/UO_0000016										
-35	Cardioglossa_elegans	yes			"First finger length"	1.1	http://purl.obolibrary.org/obo/UO_0000016										
-36	Cardioglossa_elegans	yes			"Second finger length"	1.2	http://purl.obolibrary.org/obo/UO_0000016										
-37	Cardioglossa_elegans	yes			"Third finger length"	1.2	http://purl.obolibrary.org/obo/UO_0000016										
-38	Cardioglossa_elegans	yes			"Fourth finger length"	1.3	http://purl.obolibrary.org/obo/UO_0000016										
-39	Cardioglossa_elegans	yes			"Finger disk"	round											
-40	Cardioglossa_elegans	yes			"Dermal fringe along finger"	no											
-41	Cardioglossa_elegans	yes			"Lateral dermal fringe on finger"	yes											
-42	Cardioglossa_elegans	yes			"Webbing on finger"	no											
-43	Cardioglossa_elegans	yes			"Inner palmar tubercle"	no											
-44	Cardioglossa_elegans	yes			"Outer palmar tubercle"	no											
-45	Cardioglossa_elegans	yes			"Supernumerary tubercle on finger"	yes											
-46	Dendropsophus_parviceps	yes			"Forelimb length"	4.2	http://purl.obolibrary.org/obo/UO_0000016										
-47	Dendropsophus_parviceps	yes			"Humerus length"	3.1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-48	Dendropsophus_parviceps	yes			"Humerus length"	3.3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-49	Dendropsophus_parviceps	yes			"Hand length"	2.2	http://purl.obolibrary.org/obo/UO_0000016										
-50	Dendropsophus_parviceps	yes			"First finger length"	1.1	http://purl.obolibrary.org/obo/UO_0000016										
-51	Dendropsophus_parviceps	yes			"Second finger length"	1.2	http://purl.obolibrary.org/obo/UO_0000016										
-52	Dendropsophus_parviceps	yes			"Third finger length"	1.2	http://purl.obolibrary.org/obo/UO_0000016										
-53	Dendropsophus_parviceps	yes			"Fourth finger length"	1.3	http://purl.obolibrary.org/obo/UO_0000016										
-54	Dendropsophus_parviceps	yes			"Finger disk"	round											
-55	Dendropsophus_parviceps	yes			"Dermal fringe along finger"	no											
-56	Dendropsophus_parviceps	yes			"Lateral dermal fringe on finger"	yes											
-57	Dendropsophus_parviceps	yes			"Webbing on finger"	no											
-58	Dendropsophus_parviceps	yes			"Inner palmar tubercle"	no											
-59	Dendropsophus_parviceps	yes			"Outer palmar tubercle"	no											
-60	Dendropsophus_parviceps	yes			"Supernumerary tubercle on finger"	yes											
-61	Aerugoamnis_paulus	yes			"Femur length"	8.1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-62	Aerugoamnis_paulus	yes			"Femur length"	8.1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-63	Cardioglossa_elegans	yes			"Femur length"	5.2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-64	Cardioglossa_elegans	yes			"Femur length"	5.4	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-65	Cardioglossa_elegans	yes			"Tibia shank length"	3.4	http://purl.obolibrary.org/obo/UO_0000016										
-66	Cardioglossa_elegans	yes			"Foot length"	3.9	http://purl.obolibrary.org/obo/UO_0000016										
-67	Cardioglossa_elegans	yes			"Total foot length"	4.1	http://purl.obolibrary.org/obo/UO_0000016										
-68	Cardioglossa_elegans	yes			"First toe length"	1.2	http://purl.obolibrary.org/obo/UO_0000016										
-69	Cardioglossa_elegans	yes			"Second toe length"	1.3	http://purl.obolibrary.org/obo/UO_0000016										
-70	Cardioglossa_elegans	yes			"Third toe length"	1.5	http://purl.obolibrary.org/obo/UO_0000016										
-71	Cardioglossa_elegans	yes			"Fourth toe length"	1.6	http://purl.obolibrary.org/obo/UO_0000016										
-72	Cardioglossa_elegans	yes			"Fifth toe length"	1.7	http://purl.obolibrary.org/obo/UO_0000016										
-73	Cardioglossa_elegans	yes			"Webbing on toe"	I1-2II1-2III1-2IV2-1V											
-74	Cardioglossa_elegans	yes			"Dermal fringe along toe"	yes											
-75	Cardioglossa_elegans	yes			"Lateral dermal fringe on toe"	yes											
-76	Cardioglossa_elegans	yes			"Supernumerary tubercle on toes"	no											
-77	Cardioglossa_elegans	yes			"Inner metatarsal tubercle"	no											
-78	Cardioglossa_elegans	yes			"Outer metatarsal tubercle"	yes											
-79	Dendropsophus_parviceps	yes			"Femur length"	5.2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-80	Dendropsophus_parviceps	yes			"Femur length"	5.4	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-81	Dendropsophus_parviceps	yes			"Tibia shank length"	3.4	http://purl.obolibrary.org/obo/UO_0000016										
-82	Dendropsophus_parviceps	yes			"Foot length"	3.9	http://purl.obolibrary.org/obo/UO_0000016										
-83	Dendropsophus_parviceps	yes			"Total foot length"	4.1	http://purl.obolibrary.org/obo/UO_0000016										
-84	Dendropsophus_parviceps	yes			"First toe length"	1.2	http://purl.obolibrary.org/obo/UO_0000016										
-85	Dendropsophus_parviceps	yes			"Second toe length"	1.3	http://purl.obolibrary.org/obo/UO_0000016										
-86	Dendropsophus_parviceps	yes			"Third toe length"	1.5	http://purl.obolibrary.org/obo/UO_0000016										
-87	Dendropsophus_parviceps	yes			"Fourth toe length"	1.6	http://purl.obolibrary.org/obo/UO_0000016										
-88	Dendropsophus_parviceps	yes			"Fifth toe length"	1.7	http://purl.obolibrary.org/obo/UO_0000016										
-89	Dendropsophus_parviceps	yes			"Webbing on toe"	I1-2II1-2III1-2IV2-1V											
-90	Dendropsophus_parviceps	yes			"Dermal fringe along toe"	yes											
-91	Dendropsophus_parviceps	yes			"Lateral dermal fringe on toe"	no											
-92	Dendropsophus_parviceps	yes			"Supernumerary tubercle on toes"	no											
-93	Dendropsophus_parviceps	yes			"Inner metatarsal tubercle"	yes											
-94	Dendropsophus_parviceps	yes			"Outer metatarsal tubercle"	yes											
-95	Aerugoamnis_paulus	yes			"Head length"	6.6	http://purl.obolibrary.org/obo/UO_0000016										
-96	Aerugoamnis_paulus	yes			"Head width"	7.8	http://purl.obolibrary.org/obo/UO_0000016										
-97	Cardioglossa_elegans	yes			"Head length"	6.6	http://purl.obolibrary.org/obo/UO_0000016										
-98	Cardioglossa_elegans	yes			"Head width"	3.4	http://purl.obolibrary.org/obo/UO_0000016										
-99	Cardioglossa_elegans	yes			"Snout length"	2.4	http://purl.obolibrary.org/obo/UO_0000016										
-100	Cardioglossa_elegans	yes			"Internarial distance"	1.2	http://purl.obolibrary.org/obo/UO_0000016										
-101	Cardioglossa_elegans	yes			"Nostril to snout distance"	1.6	http://purl.obolibrary.org/obo/UO_0000016										
-102	Cardioglossa_elegans	yes			"Eye to nostril"	2	http://purl.obolibrary.org/obo/UO_0000016										
-103	Cardioglossa_elegans	yes			"Tympanum diameter"	1.2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-104	Cardioglossa_elegans	yes			"Distance between front of_eyes"	1.7	http://purl.obolibrary.org/obo/UO_0000016										
-105	Cardioglossa_elegans	yes			"Distance between behind of_eyes"	1.6	http://purl.obolibrary.org/obo/UO_0000016										
-106	Cardioglossa_elegans	yes			"Interorbital distance"	1.9	http://purl.obolibrary.org/obo/UO_0000016										
-107	Cardioglossa_elegans	yes			"Snout shape lateral"	oval											
-108	Cardioglossa_elegans	yes			"Snout shape dorsal"	round											
-109	Cardioglossa_elegans	yes			"Interorbital shape"	round											
-110	Cardioglossa_elegans	yes			"Loreal region shape"	elongate											
-111	Cardioglossa_elegans	yes			"Canthus rostralis"	elongate											
-112	Cardioglossa_elegans	yes			"Nostril shape"	round											
-113	Cardioglossa_elegans	yes			"Tympanum shape"	round											
-114	Dendropsophus_parviceps	yes			"Head length"	5.3	http://purl.obolibrary.org/obo/UO_0000016										
-115	Dendropsophus_parviceps	yes			"Head width"	2.2	http://purl.obolibrary.org/obo/UO_0000016										
-116	Dendropsophus_parviceps	yes			"Snout length"	2.1	http://purl.obolibrary.org/obo/UO_0000016										
-117	Dendropsophus_parviceps	yes			"Internarial distance"	1.2	http://purl.obolibrary.org/obo/UO_0000016										
-118	Dendropsophus_parviceps	yes			"Nostril to snout distance"	1.6	http://purl.obolibrary.org/obo/UO_0000016										
-119	Dendropsophus_parviceps	yes			"Eye to nostril"	2	http://purl.obolibrary.org/obo/UO_0000016										
-120	Dendropsophus_parviceps	yes			"Tympanum diameter"	1.2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-121	Dendropsophus_parviceps	yes			"Distance between front of_eyes"	1.7	http://purl.obolibrary.org/obo/UO_0000016										
-122	Dendropsophus_parviceps	yes			"Distance between behind of_eyes"	1.6	http://purl.obolibrary.org/obo/UO_0000016										
-123	Dendropsophus_parviceps	yes			"Interorbital distance"	1.9	http://purl.obolibrary.org/obo/UO_0000016										
-124	Dendropsophus_parviceps	yes			"Snout shape lateral"	oval											
-125	Dendropsophus_parviceps	yes			"Snout shape dorsal"	oval											
-126	Dendropsophus_parviceps	yes			"Interorbital shape"	round											
-127	Dendropsophus_parviceps	yes			"Loreal region shape"	elongate											
-128	Dendropsophus_parviceps	yes			"Canthus rostralis"	round											
-129	Dendropsophus_parviceps	yes			"Nostril shape"	elongate											
-130	Dendropsophus_parviceps	yes			"Tympanum shape"	oval											
-131	Gerrothorax_pulcherrimus	yes			"Head length"	56	http://purl.obolibrary.org/obo/UO_0000016										
-132	Gerrothorax_pulcherrimus	yes			"Head width"	120	http://purl.obolibrary.org/obo/UO_0000016										
-133	Acris_crepitans	yes			"Vocal sac manifestation"	exterl											
-134	Acris_crepitans	yes			"Vocal sac form"	"single subgular"											
-135	Acris_crepitans	yes			"Vocal sac distensibility"	strong											
-136	Acris_crepitans	yes			"Tympanum covering"	concealed											
-137	Acris_crepitans	yes			"Tympanum eye ration"	0.5											
-138	Ameerega_altamazonica	yes			"Vocal sac form"	"single subgular"											
-139	Ameerega_altamazonica	yes			"Tympanum covering"	"partly concealed"											
-140	Ameerega_altamazonica	yes			"Tympanum eye ration"	0.42											
-141	Cardioglossa_elegans	yes			"Vocal sac manifestation"	exterl											
-142	Cardioglossa_elegans	yes			"Vocal sac form"	paired_subgular											
-143	Cardioglossa_elegans	yes			"Vocal sac distensibility"	weak											
-144	Cardioglossa_elegans	yes			"Tympanum covering"	absent											
-145	Cardioglossa_elegans	yes			"Tympanum eye ration"	1.1											
-146	Dendropsophus_parviceps	yes			"Vocal sac manifestation"	present											
-147	Dendropsophus_parviceps	yes			"Vocal sac form"	paired_lateral											
-148	Dendropsophus_parviceps	yes			"Vocal sac distensibility"	strong											
-149	Dendropsophus_parviceps	yes			"Tympanum covering"	present											
-150	Dendropsophus_parviceps	yes			"Tympanum eye ration"	1.1											
-151	Gephyromantis_eiselti	yes			"Vocal sac form"	"single subgular"											
-152	Gephyromantis_eiselti	yes			"Tympanum covering"	visible											
-153	Gephyromantis_eiselti	yes			"Tympanum eye ration"	0.4											
-154	Kassi_senegalensis	yes			"Vocal sac manifestation"	exterl											
-155	Kassi_senegalensis	yes			"Vocal sac form"	"single subgular"											
-156	Kassi_senegalensis	yes			"Vocal sac distensibility"	strong											
-157	Kassi_senegalensis	yes			"Tympanum covering"	concealed											
-158	Kassi_senegalensis	yes			"Tympanum eye ration"	0.6											
-159	Kurixalus_appendiculatus	yes			"Vocal sac manifestation"	interl											
-160	Kurixalus_appendiculatus	yes			"Vocal sac form"	"single subgular"											
-161	Kurixalus_appendiculatus	yes			"Vocal sac distensibility"	weak											
-162	Kurixalus_appendiculatus	yes			"Tympanum covering"	visible											
-163	Kurixalus_appendiculatus	yes			"Tympanum eye ration"	0.47											
-164	Odontophrynus_americanus	yes			"Vocal sac manifestation"	interl											
-165	Odontophrynus_americanus	yes			"Vocal sac form"	"single subgular"											
-166	Odontophrynus_americanus	yes			"Tympanum covering"	concealed											
-167	Oreophryne_amiatoi	yes			"Vocal sac form"	"single subgular"											
-168	Oreophryne_amiatoi	yes			"Tympanum covering"	visible											
-169	Oreophryne_amiatoi	yes			"Tympanum eye ration"	0.37											
-170	Cardioglossa_elegans	yes			"Egg clutchsize"	40	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-171	Cardioglossa_elegans	yes			"Egg clutchsize"	69	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-172	Cardioglossa_elegans	yes			"Egg clutchsize method"	dissection											
-173	Cardioglossa_elegans	yes			"Egg diameter without jelly"	2.1	http://purl.obolibrary.org/obo/UO_0000016										
-174	Cardioglossa_elegans	yes			"Egg deposition location"	terrestrial											
-175	Cardioglossa_elegans	yes			"Egg deposition details"	"Aquatic foam nest"											
-176	Dendropsophus_parviceps	yes			"Egg clutchsize"	150	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-177	Dendropsophus_parviceps	yes			"Egg clutchsize"	290	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-178	Dendropsophus_parviceps	yes			"Egg clutchsize method"	observation											
-179	Dendropsophus_parviceps	yes			"Egg diameter without jelly"	1.8	http://purl.obolibrary.org/obo/UO_0000016										
-180	Dendropsophus_parviceps	yes			"Egg deposition location"	aquatic											
-181	Dendropsophus_parviceps	yes			"Egg deposition details"	film_on_water											
-182	Acris_crepitans	yes			"Fundamental frequency"	3235.5	Hz										
-183	Acris_crepitans	yes			"Dominant frequency"	3235.5	Hz										
-184	Acris_crepitans	yes			"Pulse rate"	109.09	Pulse/second										
-185	Acris_crepitans	yes			"Call duration"	126.5	"millisecond (ms)"										
-186	Acris_crepitans	yes			"Note duration"	126.5	"millisecond (ms)"										
-187	Acris_crepitans	yes			"Call guild"	3											
-188	Acris_crepitans	yes			Frequency	2421.8	Hz		http://semanticscience.org/resource/SIO_001113.rdf								
-189	Acris_crepitans	yes			Frequency	4262.1	Hz		http://semanticscience.org/resource/SIO_001114.rdf								
-190	Acris_crepitans	yes			"Dominant Frequency modulation"	-0.85	Hz										
-191	Ameerega_altamazonica	yes			"Fundamental frequency"	4573.7	Hz										
-192	Ameerega_altamazonica	yes			"Dominant frequency"	4573.7	Hz										
-193	Ameerega_altamazonica	yes			"Pulse rate"	0	Pulse/second										
-194	Ameerega_altamazonica	yes			"Note duration"	27	"millisecond (ms)"										
-195	Ameerega_altamazonica	yes			"Call guild"	7											
-196	Ameerega_altamazonica	yes			"Dominant Frequency modulation"	0.75	Hz										
-197	Cardioglossa_elegans	yes			"Fundamental frequency"	1200	Hz										
-198	Cardioglossa_elegans	yes			"Dominant frequency"	2350	Hz										
-199	Cardioglossa_elegans	yes			"Pulse rate"	110	Pulse/second										
-200	Cardioglossa_elegans	yes			"Call duration"	18	"millisecond (ms)"										
-201	Cardioglossa_elegans	yes			"Note duration"	18	"millisecond (ms)"										
-202	Cardioglossa_elegans	yes			"Call guild"	5											
-203	Cardioglossa_elegans	yes			Frequency	1000	Hz		http://semanticscience.org/resource/SIO_001113.rdf								
-204	Cardioglossa_elegans	yes			Frequency	2500	Hz		http://semanticscience.org/resource/SIO_001114.rdf								
-205	Cardioglossa_elegans	yes			"Dominant Frequency modulation"	0.5	Hz										
-206	Dendropsophus_parviceps	yes			"Fundamental frequency"	1500	Hz										
-207	Dendropsophus_parviceps	yes			"Dominant frequency"	2500	Hz										
-208	Dendropsophus_parviceps	yes			"Pulse rate"	120	Pulse/second										
-209	Dendropsophus_parviceps	yes			"Call duration"	53	"millisecond (ms)"										
-210	Dendropsophus_parviceps	yes			"Note duration"	53	"millisecond (ms)"										
-211	Dendropsophus_parviceps	yes			"Call guild"	3											
-212	Dendropsophus_parviceps	yes			Frequency	1110	Hz		http://semanticscience.org/resource/SIO_001113.rdf								
-213	Dendropsophus_parviceps	yes			Frequency	2500	Hz		http://semanticscience.org/resource/SIO_001114.rdf								
-214	Dendropsophus_parviceps	yes			"Dominant Frequency modulation"	0.7	Hz										
-215	Gephyromantis_eiselti	yes			"Fundamental frequency"	4220.5	Hz										
-216	Gephyromantis_eiselti	yes			"Dominant frequency"	4220.5	Hz										
-217	Gephyromantis_eiselti	yes			"Pulse rate"	0	Pulse/second										
-218	Gephyromantis_eiselti	yes			"Call duration"	188.2	"millisecond (ms)"										
-219	Gephyromantis_eiselti	yes			"Note duration"	188.2	"millisecond (ms)"										
-220	Gephyromantis_eiselti	yes			"Call guild"	5											
-221	Gephyromantis_eiselti	yes			Frequency	3661	Hz		http://semanticscience.org/resource/SIO_001113.rdf								
-222	Gephyromantis_eiselti	yes			Frequency	4423.9	Hz		http://semanticscience.org/resource/SIO_001114.rdf								
-223	Gephyromantis_eiselti	yes			"Dominant Frequency modulation"	0.92	Hz										
-224	Kassi_senegalensis	yes			"Fundamental frequency"	1119.7	Hz										
-225	Kassi_senegalensis	yes			"Dominant frequency"	1119.7	Hz										
-226	Kassi_senegalensis	yes			"Pulse rate"	0	Pulse/second										
-227	Kassi_senegalensis	yes			"Call duration"	98.2	"millisecond (ms)"										
-228	Kassi_senegalensis	yes			"Note duration"	98.2	"millisecond (ms)"										
-229	Kassi_senegalensis	yes			"Call guild"	4											
-230	Kassi_senegalensis	yes			Frequency	341.2	Hz		http://semanticscience.org/resource/SIO_001113.rdf								
-231	Kassi_senegalensis	yes			Frequency	1828.1	Hz		http://semanticscience.org/resource/SIO_001114.rdf								
-232	Kassi_senegalensis	yes			"Dominant Frequency modulation"	7.21	Hz										
-233	Kurixalus_appendiculatus	yes			"Fundamental frequency"	2426.1	Hz										
-234	Kurixalus_appendiculatus	yes			"Dominant frequency"	2426.1	Hz										
-235	Kurixalus_appendiculatus	yes			"Pulse rate"	123.08	Pulse/second										
-236	Kurixalus_appendiculatus	yes			"Call duration"	32.5	"millisecond (ms)"										
-237	Kurixalus_appendiculatus	yes			"Note duration"	32.5	"millisecond (ms)"										
-238	Kurixalus_appendiculatus	yes			"Call guild"	2											
-239	Kurixalus_appendiculatus	yes			Frequency	1660.8	Hz		http://semanticscience.org/resource/SIO_001113.rdf								
-240	Kurixalus_appendiculatus	yes			Frequency	3030.2	Hz		http://semanticscience.org/resource/SIO_001114.rdf								
-241	Kurixalus_appendiculatus	yes			"Dominant Frequency modulation"	-5.3	Hz										
-242	Odontophrynus_americanus	yes			"Fundamental frequency"	823	Hz										
-243	Odontophrynus_americanus	yes			"Dominant frequency"	823	Hz										
-244	Odontophrynus_americanus	yes			"Pulse rate"	105.77	Pulse/second										
-245	Odontophrynus_americanus	yes			"Call duration"	454.6	"millisecond (ms)"										
-246	Odontophrynus_americanus	yes			"Note duration"	454.6	"millisecond (ms)"										
-247	Odontophrynus_americanus	yes			"Call guild"	3											
-248	Odontophrynus_americanus	yes			Frequency	412.3	Hz		http://semanticscience.org/resource/SIO_001113.rdf								
-249	Odontophrynus_americanus	yes			Frequency	1143.9	Hz		http://semanticscience.org/resource/SIO_001114.rdf								
-250	Odontophrynus_americanus	yes			"Dominant Frequency modulation"	0.28	Hz										
-251	Oreophryne_amiatoi	yes			"Fundamental frequency"	2490	Hz										
-252	Oreophryne_amiatoi	yes			"Dominant frequency"	2490	Hz										
-253	Oreophryne_amiatoi	yes			"Pulse rate"	200.9	Pulse/second										
-254	Oreophryne_amiatoi	yes			"Call duration"	2100	"millisecond (ms)"										
-255	Oreophryne_amiatoi	yes			"Note duration"	56.9	"millisecond (ms)"										
-256	Oreophryne_amiatoi	yes			"Call guild"	6											
-257	Acris_crepitans	yes			"call perch hight"	litter											
-258	Acris_crepitans	yes			"Calling behaviour: To water"	at_water											
-259	Acris_crepitans	yes			"Calling behaviour: Rapids/waterfalls"	no											
-260	Ameerega_altamazonica	yes			"call perch hight"	litter											
-261	Ameerega_altamazonica	yes			"Calling behaviour: To water"	"no water"											
-262	Ameerega_altamazonica	yes			"Calling behaviour: Cover"	no											
-263	Ameerega_altamazonica	yes			"Calling behaviour: Rapids/waterfalls"	no											
-264	Cardioglossa_elegans	yes			"call perch hight"	litter											
-265	Cardioglossa_elegans	yes			"Calling behaviour: To water"	at_water											
-266	Cardioglossa_elegans	yes			"Calling behaviour: Chorusing"	no											
-267	Cardioglossa_elegans	yes			"Calling behaviour: Cover"	no											
-268	Cardioglossa_elegans	yes			"Calling behaviour: Rapids/waterfalls"	no											
-269	Dendropsophus_parviceps	yes			"call perch hight"	litter											
-270	Dendropsophus_parviceps	yes			"Calling behaviour: To water"	at_water											
-271	Dendropsophus_parviceps	yes			"Calling behaviour: Chorusing"	no											
-272	Dendropsophus_parviceps	yes			"Calling behaviour: Cover"	no											
-273	Dendropsophus_parviceps	yes			"Calling behaviour: Rapids/waterfalls"	no											
-274	Gephyromantis_eiselti	yes			"call perch hight"	litter											
-275	Gephyromantis_eiselti	yes			"Calling behaviour: To water"	"no water"											
-276	Gephyromantis_eiselti	yes			"Calling behaviour: Rapids/waterfalls"	no											
-277	Kassi_senegalensis	yes			"call perch hight"	litter											
-278	Kassi_senegalensis	yes			"Calling behaviour: Chorusing"	yes											
-279	Kassi_senegalensis	yes			"Calling behaviour: Rapids/waterfalls"	no											
-280	Kurixalus_appendiculatus	yes			"call perch hight"	semi_arboral											
-281	Kurixalus_appendiculatus	yes			"Calling behaviour: To water"	at_water											
-282	Kurixalus_appendiculatus	yes			"Calling behaviour: Rapids/waterfalls"	no											
-283	Odontophrynus_americanus	yes			"call perch hight"	litter											
-284	Odontophrynus_americanus	yes			"Calling behaviour: To water"	at_water											
-285	Odontophrynus_americanus	yes			"Calling behaviour: Rapids/waterfalls"	no											
-286	Oreophryne_amiatoi	yes			"call perch hight"	semi_arboral											
-287	Oreophryne_amiatoi	yes			"Calling behaviour: To water"	at_water											
-288	Oreophryne_amiatoi	yes			"Calling behaviour: Cover"	no											
-289	Oreophryne_amiatoi	yes			"Calling behaviour: Rapids/waterfalls"	yes											
-290	Cardioglossa_elegans	yes			"ICUN: Threat category"	least_concern											
-291	Dendropsophus_parviceps	yes			"ICUN: Threat category"	least_concern											
-292	Aerugoamnis_paulus	yes			"Preferred macro habitat"	Marsh/swamp											
-293	Cardioglossa_elegans	yes			"Preferred macro habitat"	forest											
-294	Cardioglossa_elegans	yes			"Preferred micro habitat"	litter											
-295	Dendropsophus_parviceps	yes			"Preferred macro habitat"	savan											
-296	Dendropsophus_parviceps	yes			"Preferred micro habitat"	semi-arboreal											
-297	Gephyromantis_eiselti	yes			"Preferred macro habitat"	forest											
-298	Gerrothorax_pulcherrimus	yes			"Preferred micro habitat"	aquatic											
-299	Kassi_senegalensis	yes			"Preferred macro habitat"	grassland											
-300	Kassi_senegalensis	yes			"Preferred micro habitat"	terrestrial											
-301	Oreophryne_amiatoi	yes			"Preferred macro habitat"	forest											
-302	Acris_crepitans	yes			Holotype	"whole individual"											
-303	Aerugoamnis_paulus	yes			Abundance	rare											
-304	Aerugoamnis_paulus	yes			"Stratigraphic range"	1	"million of years"										
-305	Aerugoamnis_paulus	yes			"Environment type"	floodplain											
-306	Aerugoamnis_paulus	yes			Holotype	"articulated skeleton"											
-307	Ameerega_altamazonica	yes			"Daily activity"	day											
-308	Ameerega_altamazonica	yes			Holotype	"whole individual"											
-309	Cardioglossa_elegans	yes			"Daily activity"	night											
-310	Cardioglossa_elegans	yes			"Reproductive mode"	"exotrophic tadpoles"											
-311	Cardioglossa_elegans	yes			"Tadpole habitat"	Lentic											
-312	Cardioglossa_elegans	yes			"Tadpole feeding"	Suctorial											
-313	Cardioglossa_elegans	yes			"Maternal care"	no											
-314	Cardioglossa_elegans	yes			Abundance	frequent											
-315	Cardioglossa_elegans	yes			"Stratigraphic range"	1	"million of years"										
-316	Cardioglossa_elegans	yes			Diet	insectivor											
-317	Cardioglossa_elegans	yes			Holotype	"whole individual"											
-318	Dendropsophus_parviceps	yes			"Daily activity"	night											
-319	Dendropsophus_parviceps	yes			"Reproductive mode"	ovoviviparous											
-320	Dendropsophus_parviceps	yes			"Tadpole habitat"	Lotic											
-321	Dendropsophus_parviceps	yes			"Tadpole feeding"	"suspension feeder"											
-322	Dendropsophus_parviceps	yes			"Maternal care"	no											
-323	Dendropsophus_parviceps	yes			Abundance	rare											
-324	Dendropsophus_parviceps	yes			"Stratigraphic range"	1	"million of years"										
-325	Dendropsophus_parviceps	yes			Diet	insectivor											
-326	Dendropsophus_parviceps	yes			Holotype	"whole individual"											
-327	Gephyromantis_eiselti	yes			"Daily activity"	day											
-328	Gerrothorax_pulcherrimus	yes			Abundance	frequent											
-329	Gerrothorax_pulcherrimus	yes			"Stratigraphic range"	34	"million of years"										
-330	Gerrothorax_pulcherrimus	yes			"Environment type"	floodplain											
-331	Gerrothorax_pulcherrimus	yes			Diet	carnivore											
-332	Gerrothorax_pulcherrimus	yes			Holotype	skull											
-333	Kassi_senegalensis	yes			"Daily activity"	night											
-334	Kurixalus_appendiculatus	yes			Holotype	"whole individual"											
-335	Odontophrynus_americanus	yes			"Daily activity"	night											
-336	Oreophryne_amiatoi	yes			"Daily activity"	night											
+1	1	yes			"snout to vent length - male"	23.9	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+2	1	yes			"snout to vent length - female"	35.3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+3	10	yes			"snout to vent length - male"	25.2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+4	11	yes			"snout to vent length - male"	32.5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+5	11	yes			"snout to vent length - male"	49	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+6	2	yes			"snout to vent length - male"	18.3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+7	2	yes			"snout to vent length - female"	26.1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+8	3	yes			"snout to vent length - male"	1000	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+9	3	yes			"snout to vent length - male"	3000	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+10	4	yes			"snout to vent length - male"	19.3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+11	4	yes			"snout to vent length - male"	19.3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+12	5	yes			"snout to vent length - male"	35	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+13	5	yes			"snout to vent length - male"	25.5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+14	6	yes			"snout to vent length - male"	37	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+15	6	yes			"snout to vent length - male"	33.5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+16	7	yes			"snout to vent length - male"	22.9	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+17	7	yes			"snout to vent length - male"	20.5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+18	8	yes			"snout to vent length - male"	45	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+19	8	yes			"snout to vent length - male"	70	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+20	9	yes			"snout to vent length - male"	21.5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+21	1	yes			"colouration: pattern"	stripes											
+22	1	yes			"colouration: colour"	aposematic											
+23	1	yes			"colouration: warty"	none											
+24	1	yes			"colouration: uni vs. polymorph"	polymorph											
+25	1	yes			"colouration: sex colour dimorphism"	NY											
+26	2	yes			"colouration: pattern"	points											
+27	2	yes			"colouration: colour"	aposematic											
+28	2	yes			"colouration: warty"	none											
+29	2	yes			"colouration: uni vs. polymorph"	few											
+30	2	yes			"colouration: sex colour dimorphism"	NY											
+31	1	yes			forelimb_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+32	1	yes			forelimb_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+33	1	yes			forelimb_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+34	1	yes			humerus_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+35	1	yes			humerus_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+36	1	yes			humerus_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+37	1	yes			hand_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+38	1	yes			hand_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+39	1	yes			hand_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+40	1	yes			first_finger_length	4	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+41	1	yes			first_finger_length	6	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+42	1	yes			first_finger_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+43	1	yes			second_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016										
+44	1	yes			second_finger_length	6	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+45	1	yes			second_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+46	1	yes			third_finger_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+47	1	yes			third_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+48	1	yes			third_finger_length	51	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+49	1	yes			forth_finger_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+50	1	yes			forth_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+51	1	yes			forth_finger_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+52	1	yes			lateral_dermal_fringe_on_finger	yes											
+53	1	yes			webbing_on_finger	yes											
+54	1	yes			inner_palmar_tubercle	no											
+55	1	yes			outer_plmar_tubercle	yes											
+56	1	yes			supernumerary_tubercle_on_finger	yes											

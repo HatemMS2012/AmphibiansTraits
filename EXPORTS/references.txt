@@ -1,12 +1,1 @@
 ReferenceID	PublicationType	FullReference	PrimaryTitle	SecondaryTitle	Pages	PageStart	PageEnd	Volume	Edition	AuthorList	DateCreated	Language	URL	DOI	LocalityOfPublisher	EditorList
-"Baired, 1854"		"Baired, 1854"														
-"Henrici, Báez & Grande, 2013"		"Henrici, Báez & Grande, 2013"														
-"Twomey & Brown, 2008"		"Twomey & Brown, 2008"														
-"Boulenger, 1906"		"Boulenger, 1906"														
-"Boulenger, 1882"		"Boulenger, 1882"														
-"Guibé, 1975"		"Guibé, 1975"														
-"Fraas, 1913"		"Fraas, 1913"														
-"Duméril & Bibron 1841"		"Duméril & Bibron 1841"														
-"Günther, 1858"		"Günther, 1858"														
-"Duméril & Bibron 1841"		"Duméril & Bibron 1841"														
-"Kraus & Allison, 2009"		"Kraus & Allison, 2009"														

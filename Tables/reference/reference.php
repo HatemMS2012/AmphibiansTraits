@@ -1,5 +1,5 @@
 <?php
-class tables_misc {
+class tables_reference{
 //for user tracking information
 	function trackUser($recordID,$action,$userID){
 		//for user tracking information
@@ -11,7 +11,7 @@ class tables_misc {
 			$user_tracking->setValues(
 					array(
 						'userid'=>trim($userID),
-						'misc_id' => trim($recordID),
+						'reference_id' => trim($recordID),
 						'action'=> $action,
 						)
 				);
@@ -21,13 +21,13 @@ class tables_misc {
 	
 	function afterInsert(&$record){
 		$user =& Dataface_AuthenticationTool::getInstance()->getLoggedInUser();
-		$this->trackUser($record->strval('id'),'INSERT',$user->val('UserName'));
+		$this->trackUser($record->strval('referenceID'),'INSERT',$user->val('UserName'));
 	}
 		
 	//for user tracking information
 	function afterUpdate(&$record){
 		$user =& Dataface_AuthenticationTool::getInstance()->getLoggedInUser();
-		$this->trackUser($record->strval('id'),'UPDATE',$user->val('UserName'));
+		$this->trackUser($record->strval('referenceID'),'UPDATE',$user->val('UserName'));
 	}
 function __import__csv(&$data, $defaultValues=array()){
     
@@ -55,28 +55,50 @@ function __import__csv(&$data, $defaultValues=array()){
 		}
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
-        list($id,
-				$holotype,
-				$abundance,
-				$stratigraphic_range,
-				$daily_activity,
-				$threat_category,
-				$population_decline,
-				$adult_diet) = str_getcsv($row, $SEP,'"') ; // explode(';', $row);
+        list(	$ReferenceID,
+				$PublicationType,
+				$FullReference,
+				$PrimaryTitle,
+				$SecondaryTitle,
+				$Pages,
+				$PageStart,
+				$PageEnd,
+				$Volume,
+				$Edition,
+				$AuthorList,
+				$DateCreated,
+				$Language,
+				$URL,
+				$DOI,
+				$LocalityOfPublisher,
+				$referencecol,
+				$EditorList
+				) = str_getcsv($row, $SEP,'"') ; // explode(';', $row);
         
-		$misc	= new Dataface_Record('misc');
+		$misc	= new Dataface_Record('reference');
          // We insert the default values for the record.
         $misc->setValues($defaultValues);  
 		$misc->setValues(
 				array(
-					'id'=>trim($id),
-					'holotype'=>trim($holotype),
-					'abundance'=>trim($abundance),
-					'stratigraphic_range'=>trim($stratigraphic_range),
-					'daily_activity'=>trim($daily_activity),
-					'threat_category'=>trim($threat_category),
-					'population_decline'=>trim($population_decline),
-					'adult_diet'=>trim($adult_diet)
+					
+					'ReferenceID'=>trim($ReferenceID),
+					'PublicationType'=>trim($PublicationType),
+					'FullReference'=>trim($FullReference),
+					'PrimaryTitle'=>trim($PrimaryTitle),
+					'SecondaryTitle'=>trim($SecondaryTitle),
+					'Pages'=>trim($Pages),
+					'PageStart'=>trim($PageStart),
+					'PageEnd'=>trim($PageEnd),
+					'Volume'=>trim($Volume),
+					'Edition'=>trim($Edition),
+					'AuthorList'=>trim($AuthorList),
+					'DateCreated'=>trim($DateCreated),
+					'Language'=>trim($Language),
+					'URL'=>trim($URL),
+					'DOI'=>trim($DOI),
+					'LocalityOfPublisher'=>trim($LocalityOfPublisher),
+					'referencecol'=>trim($referencecol),
+					'EditorList'=>trim($EditorList)
 
 					)
 			);

@@ -56,8 +56,23 @@ function __import__csv(&$data, $defaultValues=array()){
 		}
 		
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
-        list($Id, $Fundamental_frequency,$Dominant_frequency, $Pulserate, $Call_duration, $Note_duration,
-		$Call_guild,$Min_frequency,$Max_frequency,$Dominant_frequency_modulation ) = str_getcsv($row, $SEP,'"') ; //explode(';', $row);
+        list($id,
+				$fundamental_frequency,
+				$dominant_frequency,
+				$pulserate,
+				$call_duration_max,
+				$call_duration_min,
+				$call_duration_mean,
+				$note_duration_max,
+				$note_duration_min,
+				$note_duration_mean,
+				$call_guild,
+				$min_frequency,
+				$max_frequency,
+				$dominant_frequency_modulation,
+				$category_dominant_frequency_modulation
+
+				) = str_getcsv($row, $SEP,'"') ; //explode(';', $row);
         
 		$call_parameters = new Dataface_Record('call_parameters', array());
          // We insert the default values for the record.
@@ -66,17 +81,21 @@ function __import__csv(&$data, $defaultValues=array()){
 		// Now we add the values from the CSV file to the taxonomic_identy table
         $call_parameters->setValues(
             array(
-                'id'=>$Id,
-                'fundamental_frequency'=> trim($Fundamental_frequency),
-				'dominant_frequency'=>trim($Dominant_frequency),
-				'pulserate'=>trim($Pulserate),
-				'call_duration'=>trim($Call_duration),
-			    'note_duration'=>trim($Note_duration),
-				'call_guild'=>trim($Call_guild),
-				'min_frequency'=>trim($Min_frequency),
-				'max_frequency'=>trim($Max_frequency),
-				'dominant_frequency_modulation'=>trim($Dominant_frequency_modulation)
-				
+                'id'=>trim($id),
+				'fundamental_frequency'=>trim($fundamental_frequency),
+				'dominant_frequency'=>trim($dominant_frequency),
+				'pulserate'=>trim($pulserate),
+				'call_duration_max'=>trim($call_duration_max),
+				'call_duration_min'=>trim($call_duration_min),
+				'call_duration_mean'=>trim($call_duration_mean),
+				'note_duration_max'=>trim($note_duration_max),
+				'note_duration_min'=>trim($note_duration_min),
+				'note_duration_mean'=>trim($note_duration_mean),
+				'call_guild'=>trim($call_guild),
+				'min_frequency'=>trim($min_frequency),
+				'max_frequency'=>trim($max_frequency),
+				'dominant_frequency_modulation'=>trim($dominant_frequency_modulation),
+				'category_dominant_frequency_modulation'=>trim($category_dominant_frequency_modulation)
                  )
             );	
 		$call_parameters->save();

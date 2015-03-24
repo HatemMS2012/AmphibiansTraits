@@ -1,8 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 mysql_set_charset ('utf-8');
-import('Dataface/SkinTool.php');
-import('Dataface/RecordGrid.php');
+
 
 class tables_taxonomic_identity {
 
@@ -22,10 +21,8 @@ function description__id(&$record){
 }
 
 */		
-
-
-
-	
+	//*************************** SECTIONS ************************************/
+	/*
 	//relationships details view
 	function section__colorDetails(&$record){
 		$noData = 1;
@@ -335,6 +332,7 @@ function description__id(&$record){
 		
 	}
 	
+	/*
 	function section__vocalSacDetails(&$record){
 		$noData = 1;
 		$contentStr = array();
@@ -937,6 +935,7 @@ function description__id(&$record){
 		
 	}
 	
+	
 	function section__icunThreatDetails(&$record){
 		$noData = 1;
 		$contentStr = array();
@@ -980,6 +979,49 @@ function description__id(&$record){
 	
 	
 
+	
+	
+		function section__habitatDetails(&$record){
+		$noData = 1;
+		$contentStr = array();
+		
+		$relatedRecords = $record->getRelatedRecords('habitat_preference');
+		
+		foreach ($relatedRecords as $distribution){
+			
+			
+			$macro= $distribution['macro'];
+			$micro=  $distribution['micro'];
+			
+			$contentStr = '<table class="record-view-table"> <tbody>';
+				
+	
+			if(isset($macro)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Preferred macro habitat</th>	<td class="record-view-value">'.$macro .'</td></tr>';
+			}
+			if(isset($micro)){
+				$noData = 0;
+				$contentStr .='<tr><th class="record-view-label">Preferred micro habitat</th>	<td class="record-view-value">'.$micro .'</td></tr>';
+			}
+			
+			
+			$contentStr .= '</tbody></table>';
+			}
+			if($noData == 1)
+				return array();
+			else	
+				return array(
+					'content' => $contentStr ,
+					'class' => 'left',
+					'order' => 11,
+					'label' => 'Habitat Details',
+			
+				);
+		
+	}
+	
+	*/
 	//Change log section
 	function section__historyDetails(&$record){
 		$noData = 1;
@@ -1026,46 +1068,6 @@ function description__id(&$record){
 					'class' => 'main',
 					'order' => 20,
 					'label' => 'Change History',
-			
-				);
-		
-	}
-	
-		function section__habitatDetails(&$record){
-		$noData = 1;
-		$contentStr = array();
-		
-		$relatedRecords = $record->getRelatedRecords('habitat_preference');
-		
-		foreach ($relatedRecords as $distribution){
-			
-			
-			$macro= $distribution['macro'];
-			$micro=  $distribution['micro'];
-			
-			$contentStr = '<table class="record-view-table"> <tbody>';
-				
-	
-			if(isset($macro)){
-				$noData = 0;
-				$contentStr .='<tr><th class="record-view-label">Preferred macro habitat</th>	<td class="record-view-value">'.$macro .'</td></tr>';
-			}
-			if(isset($micro)){
-				$noData = 0;
-				$contentStr .='<tr><th class="record-view-label">Preferred micro habitat</th>	<td class="record-view-value">'.$micro .'</td></tr>';
-			}
-			
-			
-			$contentStr .= '</tbody></table>';
-			}
-			if($noData == 1)
-				return array();
-			else	
-				return array(
-					'content' => $contentStr ,
-					'class' => 'left',
-					'order' => 11,
-					'label' => 'Habitat Details',
 			
 				);
 		
@@ -1201,7 +1203,7 @@ function description__id(&$record){
 		if($i == 0) {
 				
 			$nrCommas = substr_count($row, $SEP);
-			if($nrCommas == 5 || $nrCommas == 6)
+			if($nrCommas == 6 || $nrCommas == 7)
 				$onlyTaxnomicIdentity = 1;
 			$i++;
 		
@@ -1210,7 +1212,7 @@ function description__id(&$record){
 	
 		//In case only taxonomic_identity needs to be imported
 		if($onlyTaxnomicIdentity == 1){
-			 list($Id,$Order,$Family,$Genus,$Species,$Tax_authority,$imageurl) = str_getcsv($row, $SEP,'"');
+			 list($Id,$Order,$Family,$Genus,$Species,$Tax_authority,$referenceID,$imageurl) = str_getcsv($row, $SEP,'"');
 			 
 			 if(empty($Id))
 			$Id = utf8_encode(trim($Genus)) .'_'. utf8_encode(trim($Species));
@@ -1228,6 +1230,7 @@ function description__id(&$record){
 					'Genus'=>utf8_encode(trim($Genus)),
 					'Species'=>utf8_encode(trim($Species)),
 					'Tax_authority'=>utf8_encode(trim($Tax_authority)),
+					'referenceID'=>utf8_encode(trim($referenceID)),
 					'imageurl'=>utf8_encode(trim($imageurl))
 					
 					 )

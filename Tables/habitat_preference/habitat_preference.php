@@ -54,9 +54,12 @@ function __import__csv(&$data, $defaultValues=array()){
 		
 		continue;
 		}
-		
+	
         // We iterate through the rows and parse the fields so that they can be stored in a Dataface_Record object.
-        list($Id, $macro,$micro) = str_getcsv($row, $SEP,'"') ; // explode(';', $row);
+        list($id,
+			$macro,
+			$micro,
+			$f_environment_type) = str_getcsv($row, $SEP,'"') ; // explode(';', $row);
         
 		$habitat_preference = new Dataface_Record('habitat_preference', array());
          // We insert the default values for the record.
@@ -65,9 +68,10 @@ function __import__csv(&$data, $defaultValues=array()){
 		// Now we add the values from the CSV file to the taxonomic_identy table
         $habitat_preference->setValues(
             array(
-                'id'=>trim($Id),
-                'macro'=> trim($macro),
-				'micro'=>trim($micro)
+				'id'=>trim($id),
+				'macro'=>trim($macro),
+				'micro'=>trim($micro),
+				'f_environment_type'=>trim($f_environment_type)
 				)
             );	
 		$habitat_preference->save();
