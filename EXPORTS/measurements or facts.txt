@@ -19,39 +19,93 @@ MeasurementID	OccurrenceID	MeasurementOfTaxon	AssociationID	ParentMeasurementID	
 18	8	yes			"snout to vent length - male"	45	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
 19	8	yes			"snout to vent length - male"	70	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
 20	9	yes			"snout to vent length - male"	21.5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-21	1	yes			"colouration: pattern"	stripes											
-22	1	yes			"colouration: colour"	aposematic											
-23	1	yes			"colouration: warty"	none											
-24	1	yes			"colouration: uni vs. polymorph"	polymorph											
-25	1	yes			"colouration: sex colour dimorphism"	NY											
-26	2	yes			"colouration: pattern"	points											
-27	2	yes			"colouration: colour"	aposematic											
-28	2	yes			"colouration: warty"	none											
-29	2	yes			"colouration: uni vs. polymorph"	few											
-30	2	yes			"colouration: sex colour dimorphism"	NY											
-31	1	yes			forelimb_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-32	1	yes			forelimb_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-33	1	yes			forelimb_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
-34	1	yes			humerus_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-35	1	yes			humerus_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-36	1	yes			humerus_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
-37	1	yes			hand_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-38	1	yes			hand_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-39	1	yes			hand_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
-40	1	yes			first_finger_length	4	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-41	1	yes			first_finger_length	6	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-42	1	yes			first_finger_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
-43	1	yes			second_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016										
-44	1	yes			second_finger_length	6	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-45	1	yes			second_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
-46	1	yes			third_finger_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-47	1	yes			third_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-48	1	yes			third_finger_length	51	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
-49	1	yes			forth_finger_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
-50	1	yes			forth_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
-51	1	yes			forth_finger_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
-52	1	yes			lateral_dermal_fringe_on_finger	yes											
-53	1	yes			webbing_on_finger	yes											
-54	1	yes			inner_palmar_tubercle	no											
-55	1	yes			outer_plmar_tubercle	yes											
-56	1	yes			supernumerary_tubercle_on_finger	yes											
+21	1	yes			"snout to vent length - male"	4	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+22	1	yes			"snout to vent length - male"	12	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+23	1	yes			"colouration: pattern"	stripes											
+24	1	yes			"colouration: colour"	aposematic											
+25	1	yes			"colouration: warty"	none											
+26	1	yes			"colouration: uni vs. polymorph"	polymorph											
+27	1	yes			"colouration: sex colour dimorphism"	NY											
+28	2	yes			"colouration: pattern"	points											
+29	2	yes			"colouration: colour"	aposematic											
+30	2	yes			"colouration: warty"	none											
+31	2	yes			"colouration: uni vs. polymorph"	few											
+32	2	yes			"colouration: sex colour dimorphism"	NY											
+33	1	yes			forelimb_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+34	1	yes			forelimb_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+35	1	yes			forelimb_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+36	1	yes			humerus_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+37	1	yes			humerus_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+38	1	yes			humerus_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+39	1	yes			hand_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+40	1	yes			hand_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+41	1	yes			hand_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+42	1	yes			first_finger_length	4	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+43	1	yes			first_finger_length	6	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+44	1	yes			first_finger_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+45	1	yes			second_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016										
+46	1	yes			second_finger_length	6	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+47	1	yes			second_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+48	1	yes			third_finger_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+49	1	yes			third_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+50	1	yes			third_finger_length	51	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+51	1	yes			forth_finger_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+52	1	yes			forth_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+53	1	yes			forth_finger_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+54	1	yes			lateral_dermal_fringe_on_finger	yes											
+55	1	yes			webbing_on_finger	yes											
+56	1	yes			inner_palmar_tubercle	no											
+57	1	yes			outer_plmar_tubercle	yes											
+58	1	yes			supernumerary_tubercle_on_finger	yes											
+59	2	yes			forelimb_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+60	2	yes			forelimb_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+61	2	yes			forelimb_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+62	2	yes			humerus_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+63	2	yes			humerus_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+64	2	yes			humerus_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+65	2	yes			hand_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+66	2	yes			hand_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+67	2	yes			hand_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+68	2	yes			first_finger_length	4	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+69	2	yes			first_finger_length	6	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+70	2	yes			first_finger_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+71	2	yes			second_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016										
+72	2	yes			second_finger_length	6	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+73	2	yes			second_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+74	2	yes			third_finger_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+75	2	yes			third_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+76	2	yes			third_finger_length	51	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+77	2	yes			forth_finger_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+78	2	yes			forth_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+79	2	yes			forth_finger_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+80	2	yes			lateral_dermal_fringe_on_finger	yes											
+81	2	yes			webbing_on_finger	yes											
+82	2	yes			inner_palmar_tubercle	no											
+83	2	yes			outer_plmar_tubercle	yes											
+84	2	yes			supernumerary_tubercle_on_finger	yes											
+85	4	yes			forelimb_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+86	4	yes			forelimb_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+87	4	yes			forelimb_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+88	4	yes			humerus_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+89	4	yes			humerus_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+90	4	yes			humerus_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+91	4	yes			hand_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+92	4	yes			hand_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+93	4	yes			hand_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+94	4	yes			first_finger_length	4	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+95	4	yes			first_finger_length	6	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+96	4	yes			first_finger_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+97	4	yes			second_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016										
+98	4	yes			second_finger_length	6	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+99	4	yes			second_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+100	4	yes			third_finger_length	5	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+101	4	yes			third_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+102	4	yes			third_finger_length	51	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+103	4	yes			forth_finger_length	2	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001113.rdf								
+104	4	yes			forth_finger_length	1	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001114.rdf								
+105	4	yes			forth_finger_length	3	http://purl.obolibrary.org/obo/UO_0000016		http://semanticscience.org/resource/SIO_001109.rdf								
+106	4	yes			lateral_dermal_fringe_on_finger	yes											
+107	4	yes			webbing_on_finger	yes											
+108	4	yes			inner_palmar_tubercle	no											
+109	4	yes			outer_plmar_tubercle	yes											
+110	4	yes			supernumerary_tubercle_on_finger	yes											

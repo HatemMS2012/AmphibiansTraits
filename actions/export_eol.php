@@ -54,12 +54,13 @@ class actions_export_eol  {
 		fclose($fp);
 		
 		
-		//Export references 
+		//Export references: Now we are getting the reference from taxonomic_identity table for the future extend the 
+		//model for a separate reference table
 		//`ReferenceID`, `PublicationType`, `FullReference`, `PrimaryTitle`, `SecondaryTitle`, 
 		//`Pages`, `PageStart`, `PageEnd`, `Volume`, `Edition`, `AuthorList`, `DateCreated`, 
-		//`Language`, `URL`, `DOI`, `LocalityOfPublisher`, `referencecol`, `EditorList`
+		//`Language`, `URL`, `DOI`, `LocalityOfPublisher`, `EditorList`
 		
-		$result = mysql_query("select * from reference");
+		$result = mysql_query("select * from taxonomic_identity");
 		 
 		 
 		$fpRef = fopen('EXPORTS/references.txt', 'w');
@@ -70,23 +71,23 @@ class actions_export_eol  {
 						   
 		   while($row = mysql_fetch_assoc($result)){				   
 						   
-						   	$fieldsRef=array($row['referenceID'],
-													$row['PublicationType'],
-													$row['FullReference'],
-													$row['PrimaryTitle'],
-													$row['SecondaryTitle'],
-													$row['Pages'],
-													$row['PageStart'],
-													$row['PageEnd'],
-													$row['Volume'],
-													$row['Edition'],
-													$row['AuthorList'],
-													$row['DateCreated'],
-													$row['Language'],
-													$row['URL'],
-													$row['DOI'],
-													$row['LocalityOfPublisher'],
-													$row['EditorList']);
+						   	$fieldsRef=array($row['Tax_authority'],
+													'',//$row['PublicationType'],
+													$row['referenceID'],
+													'',//$row['PrimaryTitle'],
+													'',//$row['SecondaryTitle'],
+													'',//$row['Pages'],
+													'',//$row['PageStart'],
+													'',//$row['PageEnd'],
+													'',//$row['Volume'],
+													'',//$row['Edition'],
+													'',//$row['AuthorList'],
+													'',//$row['DateCreated'],
+													'',//$row['Language'],
+													'',//$row['URL'],
+													'',//$row['DOI'],
+													'',//$row['LocalityOfPublisher'],
+													'');//$row['EditorList']);
 							 	
 							fputcsv($fpRef, $fieldsRef,"\t");
 			}

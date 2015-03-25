@@ -1,1 +1,12 @@
 ReferenceID	PublicationType	FullReference	PrimaryTitle	SecondaryTitle	Pages	PageStart	PageEnd	Volume	Edition	AuthorList	DateCreated	Language	URL	DOI	LocalityOfPublisher	EditorList
+"Baired, 1854"		"ref1, ref2, ref2"														
+"Henrici, BÃ¡ez & Grande, 2013"																
+"Twomey & Brown, 2008"																
+"Boulenger, 1906"																
+"Boulenger, 1882"																
+"GuibÃ©, 1975"																
+"Fraas, 1913"																
+"DumÃ©ril & Bibron 1841"																
+"GÃ¼nther, 1858"																
+"DumÃ©ril & Bibron 1841"																
+"Kraus & Allison, 2009"																

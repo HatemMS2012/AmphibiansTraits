@@ -10,3 +10,5 @@ OccurrenceID	TaxonID	Sex	LifeStage	Reproductive	Behaviour	Establishment	Remarks	
 7	7														"South America"				
 8	8														"South America"				
 9	9														Madagascar				
+1	1														afsd				
+2	2														432				
